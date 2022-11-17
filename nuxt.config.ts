@@ -13,12 +13,9 @@ export default defineNuxtConfig({
       plugins:[
         '~/plugins/vue3-particles.ts'
       ],
+      modules: [
+        '@vueuse/nuxt',
+      ],
      
-  //  app:{
-  //   baseURL:'/alhada06.github.io/',
-
-    //here we go again
-  //  },
-
 
 })

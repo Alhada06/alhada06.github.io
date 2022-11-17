@@ -5,9 +5,6 @@ const particlesInit = async (engine) => {
   await loadFull(engine);
 };
 
-const particlesLoaded = async (container) => {
-  console.log("Particles container loaded", container);
-};
 const options = {
   background: {
     color: {
@@ -96,12 +93,7 @@ const options = {
   <div>
     <div class="relative -z-10">
       <ClientOnly>
-        <Particles
-          :options="options"
-          :particlesInit="particlesInit"
-          :particlesLoaded="particlesLoaded"
-          id="tsparticles"
-        />
+        <Particles :options="options" :particlesInit="particlesInit" id="tsparticles" />
       </ClientOnly>
     </div>
     <slot />
