@@ -11,11 +11,11 @@ export default defineNuxtConfig({
         },
       },
      
-   app:{
-    baseURL:'/alhada06.github.io/',
+  //  app:{
+  //   baseURL:'/alhada06.github.io/',
 
     
-   },
+  //  },
 
 
 })
