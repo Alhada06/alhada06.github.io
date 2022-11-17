@@ -95,12 +95,14 @@ const options = {
 <template>
   <div>
     <div class="relative -z-10">
-      <Particles
-        :options="options"
-        :particlesInit="particlesInit"
-        :particlesLoaded="particlesLoaded"
-        id="tsparticles"
-      />
+      <ClientOnly>
+        <Particles
+          :options="options"
+          :particlesInit="particlesInit"
+          :particlesLoaded="particlesLoaded"
+          id="tsparticles"
+        />
+      </ClientOnly>
     </div>
     <slot />
   </div>
