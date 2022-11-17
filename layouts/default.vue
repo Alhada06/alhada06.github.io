@@ -1,6 +1,14 @@
 <script setup>
 import { loadFull } from "tsparticles";
 
+const nav = ref(null);
+const targetIsVisible = ref(false);
+
+const { stop } = useIntersectionObserver(nav, ([{ isIntersecting }], observerElement) => {
+  targetIsVisible.value = isIntersecting;
+  // console.log(observerElement)
+});
+
 const particlesInit = async (engine) => {
   await loadFull(engine);
 };
@@ -96,6 +104,11 @@ const options = {
         <Particles :options="options" :particlesInit="particlesInit" id="tsparticles" />
       </ClientOnly>
     </div>
-    <slot />
+    <div>
+      <TheNavbar ref="nav" />
+      <TheSidebar :is-sidebar-visible="!targetIsVisible">
+        <slot />
+      </TheSidebar>
+    </div>
   </div>
 </template>
