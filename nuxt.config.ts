@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   //  app:{
   //   baseURL:'/alhada06.github.io/',
 
-    
+    //here we go again
   //  },
 
 
