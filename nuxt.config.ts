@@ -10,6 +10,9 @@ export default defineNuxtConfig({
           autoprefixer: {},
         },
       },
+      plugins:[
+        '~/plugins/vue3-particles.ts'
+      ],
      
   //  app:{
   //   baseURL:'/alhada06.github.io/',
