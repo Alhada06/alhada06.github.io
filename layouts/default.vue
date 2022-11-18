@@ -12,10 +12,6 @@ const particlesContainer = ref(null);
 const particlesInit = async (engine) => {
   await loadFull(engine);
 };
-const particlesLoaded = async (container) => {
-  console.log("Particles container loaded", container);
-  particlesContainer.value = container;
-};
 
 const tsparticles = ref(null);
 const test = () => {
@@ -198,14 +194,12 @@ const optionsLight = {
           v-if="isDark"
           :options="options"
           :particlesInit="particlesInit"
-          :particlesLoaded="particlesLoaded"
           id="tsparticles"
         />
         <Particles
           v-else
           :options="optionsLight"
           :particlesInit="particlesInit"
-          :particlesLoaded="particlesLoaded"
           id="tsparticles"
         />
       </ClientOnly>
