@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         '~/plugins/vue3-particles.ts'
       ],
       modules: [
-        '@vueuse/nuxt',
+        '@vueuse/nuxt','nuxt-icon'
       ],
      
 

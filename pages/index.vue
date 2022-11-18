@@ -15,8 +15,10 @@ const { stop } = useIntersectionObserver(
 <template>
   <div>
     <!-- <NuxtLink to="/#2"> teste link</NuxtLink> -->
-    <article class="mb-[500px] scroll-pt-16 backdrop-blur-sm">
-      <h1 ref="head" class="py-4 pl-8 ml-4 text-4xl text-white">My article</h1>
+    <article class="mb-[500px] scroll-pt-16">
+      <h1 ref="head" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
+        My article
+      </h1>
       <section
         v-for="(header, index) in headers"
         :key="header"
@@ -26,11 +28,11 @@ const { stop } = useIntersectionObserver(
           ref="section"
           @click="test"
           :id="index"
-          class="py-4 text-2xl pt-10 text-slate-200"
+          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
         >
           {{ header }}
         </h2>
-        <p class="text-white text-justify">
+        <p class="dark:text-white text-blue-800 text-justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Nunc sed blandit libero volutpat.
           Tempor id eu nisl nunc mi. In tellus integer feugiat scelerisque varius morbi.

@@ -26,7 +26,7 @@ const test = () => {
             v-for="(header, index) in headers"
             :key="header"
             :to="'/#' + index"
-            class="block pl-2 m-1 w-fit text-white no-underline"
+            class="block pl-2 m-1 w-fit dark:text-white text-blue-800 no-underline"
             :class="{
               'border-blue-500 border-b-2 rounded-l-xl  border-solid':
                 route.fullPath === '/#' + index,
