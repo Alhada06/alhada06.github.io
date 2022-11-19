@@ -7,7 +7,7 @@ const head = ref(null);
 const { stop } = useIntersectionObserver(
   head,
   ([{ isIntersecting }], observerElement) => {
-    console.log(observerElement);
+    console.log(observerElement, isIntersecting);
   }
 );
 </script>
@@ -17,7 +17,7 @@ const { stop } = useIntersectionObserver(
     <!-- <NuxtLink to="/#2"> teste link</NuxtLink> -->
     <article class="mb-[500px] scroll-pt-16">
       <h1 ref="head" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
-        My article
+        My article {{ isDark }}
       </h1>
       <section
         v-for="(header, index) in headers"

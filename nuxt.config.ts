@@ -1,5 +1,3 @@
-import { Static } from "nuxt/dist/app/compat/capi";
-
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     
@@ -14,8 +12,8 @@ export default defineNuxtConfig({
         '~/plugins/vue3-particles.ts'
       ],
       modules: [
-        '@vueuse/nuxt','nuxt-icon'
+        '@vueuse/nuxt','nuxt-icon',  
       ],
-     
+   
 
 })

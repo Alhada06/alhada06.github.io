@@ -24,7 +24,9 @@ const route = useRoute();
           >
         </li>
         <li>
-          <TheDarkMode />
+          <ClientOnly>
+            <TheDarkMode />
+          </ClientOnly>
         </li>
       </ul>
     </div>
