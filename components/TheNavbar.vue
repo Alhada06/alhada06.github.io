@@ -14,7 +14,7 @@ const route = useRoute();
         <li v-for="(header, index) in headers" :key="header">
           <NuxtLink
             :to="'/#' + index"
-            class="block pl-2 m-1 dark:text-white text-sm md:text-base text-blue-800 no-underline"
+            class="block pl-2 m-1 dark:text-white text-sm md:text-base text-blue-800 no-underline transition ease-in-out delay-150 hover:scale-110 dark:hover:text-sky-500 hover:text-blue-700 duration-300"
             :class="{
               'border-blue-500 border-b-2 rounded-l-xl  border-solid':
                 route.fullPath === '/#' + index,
