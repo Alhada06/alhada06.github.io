@@ -8,8 +8,8 @@ const toggleDark = useToggle(isDark);
       class="transition ease-in-out delay-150 hover:scale-125 dark:hover:text-sky-500 hover:text-blue-700 duration-300"
     >
       <Transition mode="out-in" name="slide-up">
-        <Icon v-if="isDark" name="material-symbols:sunny-rounded" />
-        <Icon v-else name="material-symbols:nights-stay-rounded" />
+        <Icon v-if="isDark" name="material-symbols:nights-stay-rounded" />
+        <Icon v-else name="material-symbols:sunny-rounded" />
       </Transition>
     </button>
   </div>
