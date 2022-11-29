@@ -1,6 +1,6 @@
 <template>
   <HeadlessPopover v-slot="{ open }" class="relative">
-    <HeadlessPopoverButton>
+    <HeadlessPopoverButton class="appearance-none">
       <Icon v-if="open" name="ic:baseline-close" />
       <Icon v-else name="ic:sharp-menu" />
     </HeadlessPopoverButton>
@@ -17,7 +17,7 @@
         class="absolute inset-x-7 top-7 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl"
       >
         <div
-          class="relative grid gap-8 text-blue-800 bg-white dark:bg-bgblue shadow-sm dark:shadow-bgbluelighter dark:text-white p-7 rounded lg:grid-cols-2"
+          class="relative grid gap-8 text-blue-800 bg-slate-100 shadow-blue-800/30 dark:bg-bgblue shadow-sm dark:shadow-bgbluelighter dark:text-white p-7 rounded lg:grid-cols-2"
         >
           <div>
             <TheDarkMode />
