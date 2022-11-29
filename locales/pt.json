@@ -1,4 +1,6 @@
 {
     "test":"teste",
-    "header":"cabeçalho"
+    "header":"cabeçalho",
+    "appearance":"Aparência",
+    "language":"Língua"
 }

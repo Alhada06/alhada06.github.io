@@ -19,11 +19,15 @@
         <div
           class="relative grid gap-8 text-blue-800 bg-slate-100 shadow-blue-800/30 dark:bg-bgblue shadow-sm dark:shadow-bgbluelighter dark:text-white p-7 rounded lg:grid-cols-2"
         >
-          <div>
+          <div class="inline-flex">
             <TheDarkMode />
+            <p class="pl-2">
+              {{ $t("appearance") }}
+            </p>
           </div>
-          <div>
+          <div class="inline-flex">
             <TheLocalSwitch />
+            <p class="pl-2">{{ $t("language") }}</p>
           </div>
         </div>
       </HeadlessPopoverPanel>

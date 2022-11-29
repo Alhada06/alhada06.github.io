@@ -1,4 +1,6 @@
 {
     "test":"test",
-    "header":"header"
+    "header":"header",
+    "appearance":"Appearance",
+    "language":"Language"
 }
