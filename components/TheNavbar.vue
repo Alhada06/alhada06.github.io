@@ -7,7 +7,7 @@ const route = useRoute();
   <nav
     class="dark:shadow md:bg-inherit dark:bg-bgblue/80 z-20 bg-slate-100/80 fixed top-0 left-0 right-0 md:relative dark:text-white text-blue-800"
   >
-    <div class="h-8 py-3 mb-2 mx-auto px-5 flex items-center justify-end">
+    <div class="h-8 py-3 mb-2 mx-auto px-2 flex items-center justify-end">
       <!-- <a class="text-2xl hover:text-cyan-500 transition-colors cursor-pointer">Logo</a> -->
 
       <ul class="flex items-center gap-1 md:gap-5">
@@ -31,7 +31,7 @@ const route = useRoute();
         <li class="hidden md:inline">
           <TheLocalSwitch />
         </li>
-        <li class="md:hidden">
+        <li class="pl-2 md:hidden">
           <TheHamburgerMenu />
         </li>
       </ul>
