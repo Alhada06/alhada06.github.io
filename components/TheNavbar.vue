@@ -28,6 +28,9 @@ const route = useRoute();
             <TheDarkMode />
           </ClientOnly>
         </li>
+        <li>
+          <TheLocalSwitch />
+        </li>
       </ul>
     </div>
   </nav>

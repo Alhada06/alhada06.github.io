@@ -23,8 +23,35 @@ export default defineNuxtConfig({
         '~/plugins/vue3-particles.ts'
       ],
       modules: [
-        '@vueuse/nuxt','nuxt-icon',  
+        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n',
       ],
-   
+      i18n: {
+        strategy: 'no_prefix',
+        
+        langDir:'locales',
+        locales:[{code:'en',name:"English",file:'en.json'
+          
+        },{code:'pt',name:'Portugês',file:'pt.json'}],
+         defaultLocale: 'en',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieCrossOrigin: true,
+          cookieKey: 'i18n_locale',
+          redirectOn: 'root',  // recommended
+        },
+        // add `vueI18n` option to `@nuxtjs/i18n` module options
+        vueI18n: {
+        
+       
+          messages: {
+            en: {
+              welcome: 'Welcome'
+            },
+            pt: {
+              welcome: 'Bem vindo'
+            }
+          }
+        }
+      }
 
 })

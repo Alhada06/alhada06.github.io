@@ -130,5 +130,6 @@ const test = () => {
         </p>
       </section>
     </article>
+    <TheLocalSwitch />
   </div>
 </template>
