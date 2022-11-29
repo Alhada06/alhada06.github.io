@@ -17,7 +17,7 @@ const router = useRouter();
     <Transition mode="out-in" :duration="400" name="fade">
       <aside v-if="isSidebarVisible" class="invisible md:visible w-full">
         <div
-          class="sticky backdrop-blur-sm bg-opacity-70 rounded-l-lg top-5 left-0 pr-2 p-6 pl-8"
+          class="sticky backdrop-blur-sm bg-opacity-70 rounded-l-lg top-5 left-0 pr-2 py-6"
         >
           <NuxtLink
             v-for="(header, index) in headers"

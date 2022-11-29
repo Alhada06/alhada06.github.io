@@ -23,15 +23,19 @@ const route = useRoute();
             {{ header }}</NuxtLink
           >
         </li>
-        <li>
+        <li class="hidden md:inline">
           <ClientOnly>
             <TheDarkMode />
           </ClientOnly>
         </li>
-        <li>
+        <li class="hidden md:inline">
           <TheLocalSwitch />
         </li>
+        <li class="md:hidden">
+          <TheHamburgerMenu />
+        </li>
       </ul>
+      <!-- dropdow menu component here  -->
     </div>
   </nav>
 </template>

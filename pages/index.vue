@@ -51,6 +51,9 @@ const test = () => {
       >
         My article
       </h1>
+      <!-- <div>
+        <TheHamburgerMenu />
+      </div> -->
       <section ref="section1" class="m-4 p-8 backdrop-blur-sm rounded-lg">
         <h2 id="0" class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
           Section 1

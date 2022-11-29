@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         '~/plugins/vue3-particles.ts'
       ],
       modules: [
-        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n',
+        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n', 'nuxt-headlessui'
       ],
       i18n: {
         strategy: 'no_prefix',
@@ -50,6 +50,12 @@ export default defineNuxtConfig({
             }
           }
         }
-      }
+      },
+      headlessui: {
+        prefix: 'Headless'
+    },
+    build: {
+      transpile: ["@headlessui/vue"],
+   },
 
 })
