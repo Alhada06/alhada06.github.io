@@ -42,7 +42,6 @@ const test = () => {
 
 <template>
   <div ref="root">
-    <!-- <NuxtLink to="/#2"> teste link</NuxtLink> -->
     <article class="mb-[500px] scroll-pt-16">
       <h1
         ref="head"
@@ -51,9 +50,7 @@ const test = () => {
       >
         My article
       </h1>
-      <!-- <div>
-        <TheHamburgerMenu />
-      </div> -->
+      <div></div>
       <section ref="section1" class="m-4 p-8 backdrop-blur-sm rounded-lg">
         <h2 id="0" class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
           Section 1
