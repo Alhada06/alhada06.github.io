@@ -190,18 +190,8 @@ const optionsLight = {
   <div>
     <div class="relative -z-10">
       <ClientOnly>
-        <Particles
-          v-if="isDark"
-          :options="options"
-          :particlesInit="particlesInit"
-          id="tsparticles"
-        />
-        <Particles
-          v-else
-          :options="optionsLight"
-          :particlesInit="particlesInit"
-          id="tsparticles"
-        />
+        <Particles v-if="isDark" :options="options" :particlesInit="particlesInit" id="tsparticles" />
+        <Particles v-else :options="optionsLight" :particlesInit="particlesInit" id="tsparticles" />
       </ClientOnly>
     </div>
     <div>
@@ -209,6 +199,7 @@ const optionsLight = {
       <TheSidebar :is-sidebar-visible="!targetIsVisible">
         <slot />
       </TheSidebar>
+      <TheScrollTop />
     </div>
   </div>
 </template>
