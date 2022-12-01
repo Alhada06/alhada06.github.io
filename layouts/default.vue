@@ -194,12 +194,14 @@ const optionsLight = {
         <Particles v-else :options="optionsLight" :particlesInit="particlesInit" id="tsparticles" />
       </ClientOnly>
     </div>
-    <div>
+    <div ref="defRoot">
       <TheNavbar ref="nav" />
       <TheSidebar :is-sidebar-visible="!targetIsVisible">
         <slot />
       </TheSidebar>
-      <TheScrollTop />
+      <ClientOnly>
+        <TheScrollTop />
+      </ClientOnly>
     </div>
   </div>
 </template>

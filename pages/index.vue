@@ -1,5 +1,5 @@
 <script setup>
-import { vIntersectionObserver } from "@vueuse/components";
+
 
 const headers = ["section 1", "sections 2", "section 3", "section 4"];
 const root = ref(null);
@@ -43,11 +43,7 @@ const test = () => {
 <template>
   <div ref="root">
     <article class="mb-[500px] scroll-pt-16">
-      <h1
-        ref="head"
-        @click="test"
-        class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800"
-      >
+      <h1 ref="head" @click="test" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
         My article
       </h1>
       <div></div>
