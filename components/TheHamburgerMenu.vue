@@ -1,6 +1,6 @@
 <template>
   <HeadlessPopover v-slot="{ open }" class="relative">
-    <HeadlessPopoverButton class="appearance-none">
+    <HeadlessPopoverButton class="outline-blue-400 outline-offset-2">
       <Icon v-if="open" name="ic:baseline-close" />
       <Icon v-else name="ic:sharp-menu" />
     </HeadlessPopoverButton>
