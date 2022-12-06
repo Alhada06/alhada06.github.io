@@ -20,9 +20,14 @@ jobs:
           cache-dependency-path: "./package-lock.json"
       - run: npm install
       - run: npm run generate
+        env:   
+            NUXT_PUBLIC_TEST_VAR: teste
+            
       - uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: '.output/public'
           CLEAN: true
+        env:   
+            NUXT_PUBLIC_TEST_VAR: ${{ secrets.NUXT_PUBLIC_TEST_VAR }}
