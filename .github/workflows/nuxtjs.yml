@@ -29,3 +29,5 @@ jobs:
           BRANCH: gh-pages
           FOLDER: '.output/public'
           CLEAN: true
+        env:   
+            NUXT_PUBLIC_TEST_VAR: ${{ secrets.NUXT_PUBLIC_TEST_VAR }}
