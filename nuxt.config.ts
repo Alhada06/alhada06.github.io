@@ -57,5 +57,9 @@ export default defineNuxtConfig({
     build: {
       transpile: ["@headlessui/vue"],
    },
-
+   
+   runtimeConfig:{
+    public:{
+    myVar:process.env.TEST_VAR}
+   }
 })
