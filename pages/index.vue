@@ -163,6 +163,6 @@ const { data } = await useAsyncQuery(query);
         </p>
       </section>
     </article>
-    {{ data }}
+    <ClientOnly> {{ data }}</ClientOnly>
   </div>
 </template>
