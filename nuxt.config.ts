@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         '~/plugins/vue3-particles.ts'
       ],
       modules: [
-        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n', 'nuxt-headlessui'
+        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n', 'nuxt-headlessui','@nuxtjs/apollo'
       ],
       i18n: {
         strategy: 'no_prefix',
@@ -57,9 +57,25 @@ export default defineNuxtConfig({
     build: {
       transpile: ["@headlessui/vue"],
    },
+   apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/'+process.env.NUXT_CONTENTFUL_SPACE,
+        httpLinkOptions:{
+          headers:{
+            authorization:'Bearer '+process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
+            'Content-Type':'application/json'
+          }
+        }
+      }
+    },
+  },
    
    runtimeConfig:{
     public:{
-    myVar:process.env.TEST_VAR}
+      contentfulSpace: process.env.NUXT_CONTENTFUL_SPACE,
+      contentfulPublicAccessToken:
+        process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
+  }
    }
 })

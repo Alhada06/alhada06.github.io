@@ -37,6 +37,40 @@ const { stop: stop4 } = useIntersectionObserver(
 const test = () => {
   console.log(config.public.myVar);
 };
+
+// const query = gql`
+//  query getProducts{
+//    productCollection{
+//     total
+//    items{name,price}
+//   }
+
+//  `;
+// const query = gql`
+//   query getProducts {
+//     productCollection {
+//       total
+//       items {
+//         name
+//         price
+//       }
+//     }
+//   }
+// `;
+
+const query = gql`
+  query {
+    productCollection {
+      total
+      items {
+        name
+      }
+    }
+  }
+`;
+// const variables = { limit: 5 };
+
+const { data } = await useAsyncQuery(query);
 </script>
 
 <template>
@@ -129,5 +163,6 @@ const test = () => {
         </p>
       </section>
     </article>
+    {{ data }}
   </div>
 </template>
