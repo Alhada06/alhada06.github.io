@@ -70,7 +70,7 @@ const query = gql`
 `;
 // const variables = { limit: 5 };
 
-const { data } = await useAsyncQuery(query);
+const { data, refresh } = await useAsyncQuery(query);
 </script>
 
 <template>
@@ -78,7 +78,7 @@ const { data } = await useAsyncQuery(query);
     <article class="mb-[500px] scroll-pt-16">
       <h1
         ref="head"
-        @click="test"
+        @click="refresh"
         class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800"
       >
         My article - {{ config.myVar }}
@@ -163,6 +163,10 @@ const { data } = await useAsyncQuery(query);
         </p>
       </section>
     </article>
-    <ClientOnly> {{ data }}</ClientOnly>
+    <ClientOnly>
+      <div v-if="data">
+        {{ data }}
+      </div>
+    </ClientOnly>
   </div>
 </template>
