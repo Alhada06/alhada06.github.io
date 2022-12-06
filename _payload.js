@@ -1,1 +1,1 @@
-export default {data:{"4WHDpokT5C":null,"_apollo:default":{}},prerenderedAt:1670348433338}
+export default (function(a){return {data:{"4WHDpokT5C":{productCollection:{total:2,items:[{name:"Omnis voluptatem con",__typename:a},{name:"Voluptatibus fugiat ",__typename:a}],__typename:"ProductCollection"}},"_apollo:default":{}},prerenderedAt:1670349251464}}("Product"))
