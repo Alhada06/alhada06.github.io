@@ -35,7 +35,7 @@ const { stop: stop4 } = useIntersectionObserver(
   { rootMargin: "0px 0px -80% 0px" }
 );
 const test = () => {
-  console.log(isIntersectingSection.value["section" + 1]);
+  console.log(config.public.myVar);
 };
 </script>
 
