@@ -60,10 +60,10 @@ export default defineNuxtConfig({
    apollo: {
     clients: {
       default: {
-        httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/'+process.env.NUXT_CONTENTFUL_SPACE,
+        httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/fjogic7r2jzt',
         httpLinkOptions:{
           headers:{
-            authorization:'Bearer '+process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
+            authorization:'Bearer nfXaQOht4-rpj1RNuSh5E0To-zfdMEyXGs4Xc2x2sA4',
             'Content-Type':'application/json'
           }
         }
