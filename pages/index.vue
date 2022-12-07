@@ -71,6 +71,7 @@ const query = gql`
 // const variables = { limit: 5 };
 
 const { data, refresh } = await useAsyncQuery(query);
+const { result } = useQuery(query);
 const compData = computed(() => data);
 </script>
 
@@ -165,7 +166,7 @@ const compData = computed(() => data);
       </section>
     </article>
     <ClientOnly>
-      <div v-if="data">{{ data }}--{{ compData }}</div>
+      <div v-if="data">{{ data }}----{{ result }}</div>
     </ClientOnly>
   </div>
 </template>
