@@ -62,7 +62,15 @@ export default defineNuxtConfig({
     
     clients: {
       default: {
-   
+        
+       defaultOptions:{
+     
+        watchQuery:{
+          fetchPolicy:'cache-and-network',
+         
+        },
+       
+       },
      
         httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/fjogic7r2jzt',
         httpLinkOptions:{
