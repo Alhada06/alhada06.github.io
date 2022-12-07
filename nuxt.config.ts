@@ -64,9 +64,11 @@ export default defineNuxtConfig({
       default: {
         
        defaultOptions:{
-       
+        query:{
+          fetchPolicy:'no-cache'
+        },
         watchQuery:{
-          fetchPolicy:'cache-and-network',
+          fetchPolicy:'no-cache',
           pollInterval:15000,
         },
        
