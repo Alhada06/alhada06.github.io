@@ -58,15 +58,30 @@ export default defineNuxtConfig({
       transpile: ["@headlessui/vue"],
    },
    apollo: {
+  
+    
     clients: {
       default: {
+        
+       defaultOptions:{
+       
+        watchQuery:{
+          fetchPolicy:'cache-and-network',
+          pollInterval:15000,
+        },
+       
+       },
+     
         httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/fjogic7r2jzt',
         httpLinkOptions:{
           headers:{
             authorization:'Bearer nfXaQOht4-rpj1RNuSh5E0To-zfdMEyXGs4Xc2x2sA4',
             'Content-Type':'application/json'
-          }
-        }
+          },
+          credentials: 'same-origin',
+        },
+        tokenName:'apollo-token',
+        
       }
     },
   },
