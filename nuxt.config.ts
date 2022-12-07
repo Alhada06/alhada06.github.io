@@ -62,17 +62,7 @@ export default defineNuxtConfig({
     
     clients: {
       default: {
-        
-       defaultOptions:{
-        query:{
-          fetchPolicy:'no-cache'
-        },
-        watchQuery:{
-          fetchPolicy:'no-cache',
-          pollInterval:15000,
-        },
-       
-       },
+   
      
         httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/fjogic7r2jzt',
         httpLinkOptions:{
