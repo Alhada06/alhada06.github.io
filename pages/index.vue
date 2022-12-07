@@ -71,7 +71,7 @@ const query = gql`
 // const variables = { limit: 5 };
 
 const { data, refresh } = await useAsyncQuery(query);
-const { result } = useQuery(query);
+const { result } = useQuery(query, {}, { prefetch: false });
 const compData = computed(() => data);
 </script>
 
