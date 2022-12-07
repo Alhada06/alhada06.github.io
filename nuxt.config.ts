@@ -66,7 +66,7 @@ export default defineNuxtConfig({
        defaultOptions:{
      
         watchQuery:{
-          fetchPolicy:'network-only',
+          fetchPolicy:'no-cache',
          
         },
        
