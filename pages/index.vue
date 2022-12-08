@@ -179,7 +179,7 @@ const compData = computed(() => data);
       <div v-if="data">
         {{ data }}----
 
-        <div v-for="(menu, index) in result.menuCollection.items" :key="index">
+        <div v-for="(menu, index) in result?.menuCollection?.items" :key="index">
           {{ menu.name }}
         </div>
       </div>
