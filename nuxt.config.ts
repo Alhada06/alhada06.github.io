@@ -65,10 +65,10 @@ export default defineNuxtConfig({
         
      
      
-        httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/fjogic7r2jzt',
+        httpEndpoint: 'https://graphql.contentful.com/content/v1/spaces/dw7ds4p9sn1i',
         httpLinkOptions:{
           headers:{
-            authorization:'Bearer nfXaQOht4-rpj1RNuSh5E0To-zfdMEyXGs4Xc2x2sA4',
+            authorization:'Bearer OxYzf4kevcHVmoNzn0qZHFSaC5_7Wj5jS_LM2jAvmP0',
             'Content-Type':'application/json'
           },
           credentials: 'same-origin',

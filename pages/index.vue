@@ -59,19 +59,29 @@ const test = () => {
 // `;
 
 const query = gql`
-  query {
-    productCollection {
+  query menuCollectionQuery($locale: String) {
+    menuCollection(locale: $locale) {
       total
       items {
         name
+        sys {
+          id
+        }
+        # add the fields you want to query
       }
     }
   }
 `;
 // const variables = { limit: 5 };
-
-const { data, refresh } = await useAsyncQuery(query);
-const { result } = useQuery(query, {}, { prefetch: false });
+const { locale } = useI18n();
+const { data, refresh } = await useAsyncQuery(query, { locale: locale.value });
+const { result } = useQuery(
+  query,
+  () => {
+    return { locale: locale.value };
+  },
+  { prefetch: false }
+);
 const compData = computed(() => data);
 </script>
 
@@ -166,7 +176,13 @@ const compData = computed(() => data);
       </section>
     </article>
     <ClientOnly>
-      <div v-if="data">{{ data }}----{{ result }}</div>
+      <div v-if="data">
+        {{ data }}----
+
+        <div v-for="(menu, index) in result.menuCollection.items" :key="index">
+          {{ menu.name }}
+        </div>
+      </div>
     </ClientOnly>
   </div>
 </template>
