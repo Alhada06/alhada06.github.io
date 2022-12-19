@@ -72,6 +72,17 @@ const query = gql`
     }
   }
 `;
+const expQuery = gql`
+  query experienceEntryQuery {
+    experienceCollection {
+      total
+      items {
+        name
+        precentage
+      }
+    }
+  }
+`;
 // const variables = { limit: 5 };
 const { locale } = useI18n();
 const { data, refresh } = await useAsyncQuery(query, { locale: locale.value });
@@ -82,6 +93,8 @@ const { result } = useQuery(
   },
   { prefetch: false }
 );
+
+const { result: experienceData } = useQuery(expQuery, null, { prefetch: false });
 const compData = computed(() => data);
 </script>
 
@@ -175,10 +188,15 @@ const compData = computed(() => data);
         </p>
       </section>
 
-      <div class="w-1/2 m-4 p-8">
-        <transition name="fade" mode="out-in" appear>
-          <TheProgressBar :limit="90" />
-        </transition>
+      <div class="w-1/2 m-4 p-8" v-if="experienceData">
+        <div
+          v-for="(experience, index) in experienceData?.experienceCollection.items"
+          :key="experience.name"
+        >
+          <transition name="fade" mode="out-in" appear>
+            <TheProgressBar :limit="experience.precentage" />
+          </transition>
+        </div>
       </div>
     </article>
 
