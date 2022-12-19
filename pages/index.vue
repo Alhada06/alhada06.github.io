@@ -174,7 +174,14 @@ const compData = computed(() => data);
           neque convallis a cras semper auctor neque.
         </p>
       </section>
+
+      <div class="w-1/2 m-4 p-8">
+        <transition name="fade" mode="out-in" appear>
+          <TheProgressBar :limit="90" />
+        </transition>
+      </div>
     </article>
+
     <ClientOnly>
       <div v-if="data">
         {{ data }}----
@@ -186,3 +193,14 @@ const compData = computed(() => data);
     </ClientOnly>
   </div>
 </template>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
