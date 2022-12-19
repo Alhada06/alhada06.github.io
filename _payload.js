@@ -1,1 +1,1 @@
-export default (function(a,b){return {data:{e7c7yG6CoI:{menuCollection:{total:2,items:[{name:"About",sys:{id:"6O6we7EvzLlX6v1x7nuRXN",__typename:a},__typename:b},{name:"Section 1",sys:{id:"7KXGuYwaSh9XhEYGFXuGws",__typename:a},__typename:b}],__typename:"MenuCollection"}},"_apollo:default":{}},prerenderedAt:1670515627060}}("Sys","Menu"))
+export default {data:{e7c7yG6CoI:{menuCollection:{total:1,items:[{name:"About",sys:{id:"6O6we7EvzLlX6v1x7nuRXN",__typename:"Sys"},__typename:"Menu"}],__typename:"MenuCollection"}},"_apollo:default":{}},prerenderedAt:1671465538311}
