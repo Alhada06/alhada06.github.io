@@ -1,3 +1,7 @@
+<script setup>
+const toggleDark = useToggle(isDark);
+</script>
+
 <template>
   <HeadlessPopover v-slot="{ open }" class="relative">
     <HeadlessPopoverButton class="outline-blue-400 outline-offset-2">
@@ -20,8 +24,8 @@
           class="relative grid gap-8 text-blue-800 bg-slate-100 shadow-blue-800/30 dark:bg-bgblue shadow-sm dark:shadow-bgbluelighter dark:text-white p-7 rounded lg:grid-cols-2"
         >
           <div class="inline-flex">
-            <TheDarkMode />
-            <p class="pl-2">
+            <TheDarkMode ref="darkMode" />
+            <p class="pl-2" @click="toggleDark()">
               {{ $t("appearance") }}
             </p>
           </div>
