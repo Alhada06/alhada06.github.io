@@ -101,11 +101,7 @@ const compData = computed(() => data);
 <template>
   <div ref="root">
     <article class="mb-[500px] scroll-pt-16">
-      <h1
-        ref="head"
-        @click="refresh"
-        class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800"
-      >
+      <h1 ref="head" @click="refresh" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
         My article - {{ config.myVar }}
       </h1>
       <div></div>
@@ -189,10 +185,7 @@ const compData = computed(() => data);
       </section>
 
       <div class="w-1/2 m-4 p-8" v-if="experienceData">
-        <div
-          v-for="(experience, index) in experienceData?.experienceCollection.items"
-          :key="experience.name"
-        >
+        <div v-for="(experience, index) in experienceData?.experienceCollection.items" :key="experience.name">
           <transition name="fade" mode="out-in" appear>
             <TheProgressBar :limit="experience.precentage" />
           </transition>
@@ -202,12 +195,13 @@ const compData = computed(() => data);
 
     <ClientOnly>
       <div v-if="data">
-        {{ data }}----
+        async: {{ data }}----
 
         <div v-for="(menu, index) in result?.menuCollection?.items" :key="index">
           {{ menu.name }}
         </div>
       </div>
+      <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
     </ClientOnly>
   </div>
 </template>
