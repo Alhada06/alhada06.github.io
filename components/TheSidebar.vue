@@ -18,13 +18,13 @@ const router = useRouter();
       <aside v-if="isSidebarVisible" class="invisible md:visible w-full">
         <div class="sticky top-3 left-0 z-0 opacity-50">
           <div
-            class="z-0 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] border-l-blue-900 border-b-[100px] border-b-transparent"
+            class="z-0 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent"
           ></div>
           <div
-            class="z-0 mt-5 absolute border-t-[75px] opacity-80 border-t-transparent border-l-[155px] border-l-blue-900 border-b-[100px] border-b-transparent"
+            class="z-0 mt-5 absolute border-t-[75px] opacity-80 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent"
           ></div>
           <div
-            class="z-0 mt-10 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] border-l-blue-900 border-b-[100px] border-b-transparent"
+            class="z-0 mt-10 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent"
           ></div>
         </div>
         <div class="sticky bg-opacity-70 rounded-l-lg top-5 left-0 pr-2 py-6">
