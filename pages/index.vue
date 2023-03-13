@@ -107,6 +107,7 @@ const skillsQuery = gql`
         }
         name
         icon
+        iconSize
       }
     }
   }
@@ -221,7 +222,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
     </ClientOnly>
     {{ skillsData }}----
     <div v-if="skillsData" v-for="(item, index) in skillsData?.skillCollection?.items" :key="index">
-      <Icon :name="item.icon" />---
+      <Icon :name="item.icon" :size="item.iconSize" />---
       {{ item.sys.id }}
     </div>
     <!-- <Icon name="logos:vue" /> -->
