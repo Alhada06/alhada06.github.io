@@ -96,16 +96,28 @@ const { result } = useQuery(
 
 const { result: experienceData } = useQuery(expQuery, null, { prefetch: false });
 const compData = computed(() => data);
+
+const skillsQuery = gql`
+  query skillCollectionQuery {
+    skillCollection {
+      total
+      items {
+        sys {
+          id
+        }
+        name
+        icon
+      }
+    }
+  }
+`;
+const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 </script>
 
 <template>
   <div ref="root">
     <article class="mb-[500px] scroll-pt-16">
-      <h1
-        ref="head"
-        @click="refresh"
-        class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800"
-      >
+      <h1 ref="head" @click="refresh" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
         My article - {{ config.myVar }}
       </h1>
       <div></div>
@@ -189,10 +201,7 @@ const compData = computed(() => data);
       </section>
 
       <div class="w-1/2 m-4 p-8" v-if="experienceData">
-        <div
-          v-for="(experience, index) in experienceData?.experienceCollection.items"
-          :key="experience.name"
-        >
+        <div v-for="(experience, index) in experienceData?.experienceCollection.items" :key="experience.name">
           <transition name="fade" mode="out-in" appear>
             <TheProgressBar :limit="experience.precentage" />
           </transition>
@@ -210,6 +219,12 @@ const compData = computed(() => data);
       </div>
       <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
     </ClientOnly>
+    {{ skillsData }}----
+    <div v-if="skillsData" v-for="(item, index) in skillsData?.skillCollection?.items" :key="index">
+      <Icon :name="item.icon" />---
+      {{ item.sys.id }}
+    </div>
+    <!-- <Icon name="logos:vue" /> -->
   </div>
 </template>
 <style scoped>
