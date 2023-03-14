@@ -1,0 +1,10 @@
+#import "../fragments/skill.fragment.gql"
+
+query skillCollectionQuery {
+  skillCollection {
+    total
+    items {
+      ...Skill
+    }
+  }
+}

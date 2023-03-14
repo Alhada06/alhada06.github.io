@@ -1,4 +1,7 @@
 <script setup>
+import skillsQuery from "@/graphql/queries/skills.query.gql";
+import experiencesQuery from "@/graphql/queries/experiences.query.gql";
+import menusQuery from "@/graphql/queries/menus.query.gql";
 const config = useRuntimeConfig();
 const headers = ["section 1", "sections 2", "section 3", "section 4"];
 const root = ref(null);
@@ -39,79 +42,33 @@ const test = () => {
 };
 
 // const query = gql`
-//  query getProducts{
-//    productCollection{
-//     total
-//    items{name,price}
-//   }
-
-//  `;
-// const query = gql`
-//   query getProducts {
-//     productCollection {
+//   query menuCollectionQuery($locale: String) {
+//     menuCollection(locale: $locale) {
 //       total
 //       items {
 //         name
-//         price
+//         sys {
+//           id
+//         }
+//         # add the fields you want to query
 //       }
 //     }
 //   }
 // `;
 
-const query = gql`
-  query menuCollectionQuery($locale: String) {
-    menuCollection(locale: $locale) {
-      total
-      items {
-        name
-        sys {
-          id
-        }
-        # add the fields you want to query
-      }
-    }
-  }
-`;
-const expQuery = gql`
-  query experienceEntryQuery {
-    experienceCollection {
-      total
-      items {
-        name
-        precentage
-      }
-    }
-  }
-`;
-// const variables = { limit: 5 };
 const { locale } = useI18n();
-const { data, refresh } = await useAsyncQuery(query, { locale: locale.value });
+const { data, refresh } = await useAsyncQuery(menusQuery, { locale: locale.value });
 const { result } = useQuery(
-  query,
+  menusQuery,
   () => {
     return { locale: locale.value };
   },
   { prefetch: false }
 );
 
-const { result: experienceData } = useQuery(expQuery, null, { prefetch: false });
+const { result: experienceData } = useQuery(experiencesQuery, null, { prefetch: false });
 const compData = computed(() => data);
 
-const skillsQuery = gql`
-  query skillCollectionQuery {
-    skillCollection {
-      total
-      items {
-        sys {
-          id
-        }
-        name
-        icon
-        iconSize
-      }
-    }
-  }
-`;
 const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 </script>
 
