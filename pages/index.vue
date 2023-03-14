@@ -117,7 +117,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 
 <template>
   <div ref="root">
-    <article class="mb-[500px] scroll-pt-16">
+    <article class="mb-[500px] ml-6 scroll-pt-16">
       <h1 ref="head" @click="refresh" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
         My article - {{ config.myVar }}
       </h1>
