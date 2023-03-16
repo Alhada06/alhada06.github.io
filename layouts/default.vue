@@ -188,7 +188,7 @@ const optionsLight = {
 </script>
 <template>
   <div>
-    <div class="relative -z-10">
+    <div class="relative -z-10 bg-bgblue">
       <ClientOnly>
         <Particles v-if="isDark" :options="options" :particlesInit="particlesInit" id="tsparticles" />
         <Particles v-else :options="optionsLight" :particlesInit="particlesInit" id="tsparticles" />

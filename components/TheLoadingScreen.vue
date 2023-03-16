@@ -14,14 +14,26 @@ let timer = setInterval(() => {
     setTimeout(() => {
       emit("update:isLoading", false);
       clearInterval(timer);
-    }, 2000);
+    }, 1000);
   }
 }, 3);
 </script>
 
 <template>
-  <div v-if="isLoading"
-    class="top-0 fixed left-0 w-full h-full z-50 dark:bg-bgblue bg-slate-100 text-blue-800 dark:text-white">
-    <div class="flex justify-center items-center h-full text-5xl">{{ percent }}%</div>
-  </div>
+  <Transition mode="in-out" :duration="500" name="fade">
+    <div v-if="isLoading"
+      class="top-0 fixed left-0 w-full h-full z-50 dark:bg-bgblue bg-slate-100 text-blue-800 dark:text-white">
+      <div class="flex justify-center items-center h-full text-5xl">{{ percent }}%</div>
+    </div>
+  </Transition>
 </template>
+<style scoped>
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

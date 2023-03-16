@@ -167,16 +167,15 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
       </div>
     </article>
 
-    <ClientOnly>
-      <div v-if="data">
-        async: {{ data }}----
+    <div v-if="data">
+      async: {{ data }}----
 
-        <div v-for="(menu, index) in result?.menuCollection?.items" :key="index">
-          {{ menu.name }}
-        </div>
+      <div v-for="(menu, index) in result?.menuCollection?.items" :key="index">
+        {{ menu.name }}
       </div>
-      <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
-    </ClientOnly>
+    </div>
+    <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
+
     {{ skillsData }}----
     <div v-if="skillsData" v-for="(item, index) in skillsData?.skillCollection?.items" :key="index">
       <Icon :name="item.icon" :size="item.iconSize" />---
