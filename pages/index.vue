@@ -6,6 +6,8 @@ import menusQuery from "@/graphql/queries/menus.query.gql";
 const config = useRuntimeConfig();
 definePageMeta({
   middleware: defineNuxtRouteMiddleware((to, from) => {
+    if (process.server) return;
+
     if (isFirstRender.value === true) {
       return navigateTo("/loading");
     }
