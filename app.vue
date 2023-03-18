@@ -1,9 +1,10 @@
 <script setup lang="ts">
 const nuxtApp = useNuxtApp();
 const loading = ref(false);
-const isFirstRender = useSessionStorage("firstRender", true);
+
 nuxtApp.hook("app:mounted", () => {
   if (isFirstRender.value) {
+    acessCount.value = +1;
     loading.value = true;
   }
 
@@ -20,7 +21,7 @@ nuxtApp.hook("page:finish", () => {
 </script>
 
 <template>
-  <TheLoadingScreen :is-loading="loading" @update:is-loading="($event) => (loading = $event)" />
+  <!-- <TheLoadingScreen :is-loading="loading" @update:is-loading="($event) => (loading = $event)" /> -->
 
   <NuxtLayout>
     <NuxtPage />

@@ -2,7 +2,15 @@
 import skillsQuery from "@/graphql/queries/skills.query.gql";
 import experiencesQuery from "@/graphql/queries/experiences.query.gql";
 import menusQuery from "@/graphql/queries/menus.query.gql";
+
 const config = useRuntimeConfig();
+definePageMeta({
+  middleware: defineNuxtRouteMiddleware((to, from) => {
+    if (isFirstRender.value === true) {
+      return navigateTo("/loading");
+    }
+  }),
+});
 const headers = ["section 1", "sections 2", "section 3", "section 4"];
 const root = ref(null);
 const section1 = ref(null);
