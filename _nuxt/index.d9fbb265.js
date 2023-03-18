@@ -1,0 +1,1 @@
+import{f as r,t as s,u as n,o as a,B as i}from"./entry.0995d1fc.js";const p={__name:"index",setup(t){return(e,o)=>(a(),r("div",null,"loading page --- "+s("isFirstRender"in e?e.isFirstRender:n(i)),1))}};export{p as default};
