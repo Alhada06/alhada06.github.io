@@ -2,13 +2,66 @@
 definePageMeta({
     layout: "backgound",
 });
-setTimeout(() => {
-    return navigateTo("/");
-}, 2000);
+// setTimeout(() => {
+//     return navigateTo("/");
+// }, 2000);
 // let sessionData =
 //     typeof window !== "undefined" ? localStorage.getItem("firstRender") : null;
+
+const percentage = ref(0);
+const percent = computed(() => percentage.value.toFixed());
+
+let timer = setInterval(() => {
+    if (percentage.value < 100) {
+        percentage.value += 0.1;
+    } else {
+        setTimeout(() => {
+            clearInterval(timer);
+            return navigateTo("/");
+        }, 1000);
+    }
+}, 3);
 </script>
 
 <template>
-    <div>loading page --- {{ isFirstRender }}</div>
+    <div>
+        <div class="top-0 fixed left-0 w-full h-full">
+            <div class="flex relative justify-center items-center h-full z-10">
+                <div
+                    class="flex absolute inset-0 justify-center pl-2 items-center h-full dark:text-slate-100 text-blue-800 text-5xl z-20">
+                    {{ percent }}%
+                </div>
+                <div
+                    class="animate-spin ease-linear rounded-full border-t-blue-800 dark:border-t-blue-800 border-8 border-t-8 dark:border-slate-100/70 border-slate-400/50 h-64 w-64">
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
+<style>
+.loader {
+    border-top-color: #3498db;
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>
