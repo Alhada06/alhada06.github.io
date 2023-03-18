@@ -1,0 +1,1 @@
+import{B as r,f as s,t as n,u as t,o as a,C as i}from"./entry.b7168233.js";const p={__name:"index",setup(o){return setTimeout(()=>r("/"),2e3),(e,u)=>(a(),s("div",null,"loading page --- "+n("isFirstRender"in e?e.isFirstRender:t(i)),1))}};export{p as default};
