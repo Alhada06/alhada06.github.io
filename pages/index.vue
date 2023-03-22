@@ -13,13 +13,13 @@ definePageMeta({
     }
   }),
 });
-const headers = ["section 1", "sections 2", "section 3", "section 4"];
+const headers = ["Section 1", "Section 2", "Section 3", "Section 4"];
 const root = ref(null);
 const section1 = ref(null);
 const { stop } = useIntersectionObserver(
   section1,
   ([{ isIntersecting }], observerElement) => {
-    isIntersectingSection.value.section1 = isIntersecting;
+    isIntersectingSection.value.Section1 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
@@ -27,7 +27,7 @@ const section2 = ref(null);
 const { stop: stop2 } = useIntersectionObserver(
   section2,
   ([{ isIntersecting }], observerElement) => {
-    isIntersectingSection.value.section2 = isIntersecting;
+    isIntersectingSection.value.Section2 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
@@ -35,7 +35,7 @@ const section3 = ref(null);
 const { stop: stop3 } = useIntersectionObserver(
   section3,
   ([{ isIntersecting }], observerElement) => {
-    isIntersectingSection.value.section3 = isIntersecting;
+    isIntersectingSection.value.Section3 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
@@ -43,7 +43,7 @@ const section4 = ref(null);
 const { stop: stop4 } = useIntersectionObserver(
   section4,
   ([{ isIntersecting }], observerElement) => {
-    isIntersectingSection.value.section4 = isIntersecting;
+    isIntersectingSection.value.Section4 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
