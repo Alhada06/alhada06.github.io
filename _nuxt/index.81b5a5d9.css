@@ -1,0 +1,1 @@
+.loader{animation:spinner 1.5s infinite}@keyframes spinner{to{transform:rotate(1turn)}}
