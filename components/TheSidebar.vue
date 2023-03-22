@@ -13,21 +13,21 @@ const router = useRouter();
 
 <template>
   <!-- route.fullPath === '/#' + index, -->
-  <main class="grid grid-cols-6 gap-2 pt-8">
-    <Transition mode="out-in" :duration="400" name="fade">
+<main class="grid grid-cols-6 gap-2 pt-8">
+  <Transition mode="out-in" :duration="400" name="fade">
       <aside v-if="isSidebarVisible" class="invisible md:visible w-full">
-        <div class="sticky top-3 left-0 z-0 opacity-50">
-          <div
-            class="z-0 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
-          </div>
-        </div>
-        <div
-          class="z-0 mt-5 absolute border-t-[75px] opacity-80 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
-        </div>
-        <div
-          class="z-0 mt-10 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
-        </div>
-        </div>
+        <!-- <div class="sticky top-3 left-0 z-0 opacity-50">
+            <div
+              class="z-0 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent"></div>
+            </div>
+
+            <div
+              class="z-0 mt-5 absolute border-t-[75px] opacity-80 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
+            </div>
+            <div
+              class="z-0 mt-10 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
+            </div>
+          </div> -->
         <div class="sticky bg-opacity-70 rounded-l-lg top-5 left-0 pr-2 py-6">
           <div class="z-40">
             <NuxtLink v-for="(header, index) in headers" :key="header" :to="'/#' + index"
