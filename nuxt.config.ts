@@ -23,8 +23,15 @@ export default defineNuxtConfig({
         '~/plugins/vue3-particles.ts'
       ],
       modules: [
-        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n', 'nuxt-headlessui','@nuxtjs/apollo'
+        '@vueuse/nuxt','nuxt-icon','@nuxtjs/i18n', 'nuxt-headlessui','@nuxtjs/apollo','@nuxtjs/google-fonts'
       ],
+      googleFonts:{
+        families:{
+          'Roboto+Mono':true,
+          Alkatra:true,
+        }
+      },
+    
       i18n: {
         strategy: 'no_prefix',
         

@@ -32,7 +32,7 @@ let timer = setInterval(() => {
                     {{ percent }}%
                 </div>
                 <div
-                    class="animate-spin ease-linear rounded-full border-t-blue-800 dark:border-t-blue-800 border-8 border-t-8 dark:border-slate-100/70 border-slate-400/50 h-64 w-64">
+                    class="loader ease-linear rounded-full border-t-blue-800 dark:border-t-blue-800 border-8 border-t-8 dark:border-slate-100/70 border-slate-400/50 h-64 w-64">
                 </div>
             </div>
         </div>
@@ -40,27 +40,18 @@ let timer = setInterval(() => {
 </template>
 <style>
 .loader {
-    border-top-color: #3498db;
-    -webkit-animation: spinner 1.5s linear infinite;
-    animation: spinner 1.5s linear infinite;
+    -webkit-animation: spinner 1.5s infinite;
+    animation: spinner 1.5s infinite;
 }
 
 @-webkit-keyframes spinner {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-
-    100% {
+    to {
         -webkit-transform: rotate(360deg);
     }
 }
 
 @keyframes spinner {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
+    to {
         transform: rotate(360deg);
     }
 }
