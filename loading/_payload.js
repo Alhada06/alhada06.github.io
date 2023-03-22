@@ -1,1 +1,1 @@
-export default {data:{"_apollo:default":{}},prerenderedAt:1679502484607}
+export default {data:{"_apollo:default":{}},prerenderedAt:1679506181329}
