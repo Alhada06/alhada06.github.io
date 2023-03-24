@@ -28,8 +28,9 @@ export default defineNuxtConfig({
       googleFonts:{
         families:{
           'Roboto+Mono':true,
-          Alkatra:true,
-        }
+         
+        },
+        download:true
       },
     
       i18n: {
