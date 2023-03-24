@@ -67,7 +67,9 @@ const test = () => {
 // `;
 
 const { locale } = useI18n();
-const { data, refresh } = await useAsyncQuery(menusQuery, { locale: locale.value });
+const { data, refresh } = await useAsyncQuery(menusQuery, {
+  locale: locale.value,
+});
 const { result } = useQuery(
   menusQuery,
   () => {
@@ -76,7 +78,9 @@ const { result } = useQuery(
   { prefetch: false }
 );
 
-const { result: experienceData } = useQuery(experiencesQuery, null, { prefetch: false });
+const { result: experienceData } = useQuery(experiencesQuery, null, {
+  prefetch: false,
+});
 const compData = computed(() => data);
 
 const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
@@ -85,91 +89,122 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 <template>
   <div ref="root">
     <article class="mb-[500px] ml-6 scroll-pt-16">
-      <h1 ref="head" @click="refresh" class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800">
+      <h1
+        ref="head"
+        @click="refresh"
+        class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800"
+      >
         My article - {{ config.myVar }}
       </h1>
       <div></div>
       <section ref="section1" class="m-4 p-8 backdrop-blur-sm rounded-lg">
-        <h2 id="0" class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
+        <h2
+          id="0"
+          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
+        >
           Section 1
         </h2>
         <p class="dark:text-white text-blue-800 text-justify">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc sed blandit libero volutpat.
-          Tempor id eu nisl nunc mi. In tellus integer feugiat scelerisque varius morbi.
-          At imperdiet dui accumsan sit. Id ornare arcu odio ut sem nulla pharetra diam
-          sit. Urna nunc id cursus metus aliquam eleifend. Amet luctus venenatis lectus
-          magna fringilla urna porttitor. Dignissim enim sit amet venenatis urna cursus
-          eget nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis aenean et
-          tortor at risus viverra adipiscing at in. Turpis egestas integer eget aliquet
-          nibh praesent tristique magna sit. Gravida neque convallis a cras semper auctor
-          neque. amet venenatis urna cursus eget nunc scelerisque. Elementum sagittis
-          vitae et leo duis. Convallis aenean et tortor at risus viverra adipiscing at in.
-          Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Gravida
-          neque convallis a cras semper auctor neque.
+          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
+          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
+          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
+          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
+          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
+          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque. amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque.
         </p>
       </section>
       <section ref="section2" class="m-4 p-8 backdrop-blur-sm rounded-lg">
-        <h2 id="1" class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
+        <h2
+          id="1"
+          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
+        >
           Section 2
         </h2>
         <p class="dark:text-white text-blue-800 text-justify">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc sed blandit libero volutpat.
-          Tempor id eu nisl nunc mi. In tellus integer feugiat scelerisque varius morbi.
-          At imperdiet dui accumsan sit. Id ornare arcu odio ut sem nulla pharetra diam
-          sit. Urna nunc id cursus metus aliquam eleifend. Amet luctus venenatis lectus
-          magna fringilla urna porttitor. Dignissim enim sit amet venenatis urna cursus
-          eget nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis aenean et
-          tortor at risus viverra adipiscing at in. Turpis egestas integer eget aliquet
-          nibh praesent tristique magna sit. Gravida neque convallis a cras semper auctor
-          neque. amet venenatis urna cursus eget nunc scelerisque. Elementum sagittis
-          vitae et leo duis. Convallis aenean et tortor at risus viverra adipiscing at in.
-          Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Gravida
-          neque convallis a cras semper auctor neque.
+          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
+          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
+          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
+          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
+          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
+          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque. amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque.
         </p>
       </section>
       <section ref="section3" class="m-4 p-8 backdrop-blur-sm rounded-lg">
-        <h2 id="2" class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
+        <h2
+          id="2"
+          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
+        >
           Section 3
         </h2>
         <p class="dark:text-white text-blue-800 text-justify">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc sed blandit libero volutpat.
-          Tempor id eu nisl nunc mi. In tellus integer feugiat scelerisque varius morbi.
-          At imperdiet dui accumsan sit. Id ornare arcu odio ut sem nulla pharetra diam
-          sit. Urna nunc id cursus metus aliquam eleifend. Amet luctus venenatis lectus
-          magna fringilla urna porttitor. Dignissim enim sit amet venenatis urna cursus
-          eget nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis aenean et
-          tortor at risus viverra adipiscing at in. Turpis egestas integer eget aliquet
-          nibh praesent tristique magna sit. Gravida neque convallis a cras semper auctor
-          neque. amet venenatis urna cursus eget nunc scelerisque. Elementum sagittis
-          vitae et leo duis. Convallis aenean et tortor at risus viverra adipiscing at in.
-          Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Gravida
-          neque convallis a cras semper auctor neque.
+          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
+          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
+          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
+          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
+          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
+          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque. amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque.
         </p>
       </section>
-      <section id="3" ref="section4" class="m-4 p-8 backdrop-blur-sm rounded-lg">
-        <h2 class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">Section 4</h2>
+      <section
+        id="3"
+        ref="section4"
+        class="m-4 p-8 backdrop-blur-sm rounded-lg"
+      >
+        <h2 class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
+          Section 4
+        </h2>
         <p class="dark:text-white text-blue-800 text-justify">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Nunc sed blandit libero volutpat.
-          Tempor id eu nisl nunc mi. In tellus integer feugiat scelerisque varius morbi.
-          At imperdiet dui accumsan sit. Id ornare arcu odio ut sem nulla pharetra diam
-          sit. Urna nunc id cursus metus aliquam eleifend. Amet luctus venenatis lectus
-          magna fringilla urna porttitor. Dignissim enim sit amet venenatis urna cursus
-          eget nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis aenean et
-          tortor at risus viverra adipiscing at in. Turpis egestas integer eget aliquet
-          nibh praesent tristique magna sit. Gravida neque convallis a cras semper auctor
-          neque. amet venenatis urna cursus eget nunc scelerisque. Elementum sagittis
-          vitae et leo duis. Convallis aenean et tortor at risus viverra adipiscing at in.
-          Turpis egestas integer eget aliquet nibh praesent tristique magna sit. Gravida
-          neque convallis a cras semper auctor neque.
+          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
+          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
+          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
+          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
+          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
+          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque. amet venenatis urna cursus eget
+          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
+          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
+          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
+          convallis a cras semper auctor neque.
         </p>
       </section>
 
       <div class="w-1/2 m-4 p-8" v-if="experienceData">
-        <div v-for="(experience, index) in experienceData?.experienceCollection.items" :key="experience.name">
+        <div
+          v-for="(experience, index) in experienceData?.experienceCollection
+            .items"
+          :key="experience.name"
+        >
           <transition name="fade" mode="out-in" appear>
             <TheProgressBar :limit="experience.precentage" />
           </transition>
@@ -187,7 +222,11 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
     <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
 
     {{ skillsData }}----
-    <div v-if="skillsData" v-for="(item, index) in skillsData?.skillCollection?.items" :key="index">
+    <div
+      v-if="skillsData"
+      v-for="(item, index) in skillsData?.skillCollection?.items"
+      :key="index"
+    >
       <Icon :name="item.icon" :size="item.iconSize" />---
       {{ item.sys.id }}
     </div>
