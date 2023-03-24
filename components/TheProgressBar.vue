@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
-  limit: Number,
+  limit: { type: Number, required: true },
 });
 
-const percentage = ref(0);
-const percent = computed(() => percentage.value.toFixed());
+const percentage = ref<number>(0);
+const percent = computed<string>(() => percentage.value.toFixed());
 
 let timer = setInterval(() => {
   if (percentage.value < props.limit) {
