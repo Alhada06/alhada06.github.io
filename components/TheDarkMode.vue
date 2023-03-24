@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const toggleDark = useToggle(isDark);
 </script>
 <template>

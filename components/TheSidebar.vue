@@ -1,10 +1,10 @@
-<script setup>
-const headers = ["Section 1", "Sections 2", "Section 3", "Section 4"];
+<script setup lang="ts">
+const headers: string[] = ["Section 1", "Sections 2", "Section 3", "Section 4"];
 
 const props = defineProps({
   isSidebarVisible: Boolean,
 });
-const trans = (i) => {
+const trans = (i: number): string => {
   return "Section" + (i + 1);
 };
 const route = useRoute();
@@ -16,18 +16,6 @@ const router = useRouter();
   <main class="grid grid-cols-6 gap-2 pt-8">
     <Transition mode="out-in" :duration="400" name="fade">
       <aside v-if="isSidebarVisible" class="invisible md:visible w-full">
-        <!-- <div class="sticky top-3 left-0 z-0 opacity-50">
-            <div
-              class="z-0 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent"></div>
-            </div>
-
-            <div
-              class="z-0 mt-5 absolute border-t-[75px] opacity-80 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
-            </div>
-            <div
-              class="z-0 mt-10 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent">
-            </div>
-          </div> -->
         <div class="sticky top-2 left-0 z-0 opacity-50">
           <div
             class="z-0 absolute border-t-[75px] opacity-60 border-t-transparent border-l-[155px] dark:border-l-blue-900 border-l-blue-300 border-b-[100px] border-b-transparent"

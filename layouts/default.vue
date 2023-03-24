@@ -1,23 +1,26 @@
-<script setup>
+<script setup lang="ts">
 import { loadFull } from "tsparticles";
 
 const nav = ref(null);
 const targetIsVisible = ref(false);
 
-const { stop } = useIntersectionObserver(nav, ([{ isIntersecting }], observerElement) => {
-  targetIsVisible.value = isIntersecting;
-  // console.log(observerElement)
-});
-const particlesContainer = ref(null);
-const particlesInit = async (engine) => {
+const { stop } = useIntersectionObserver(
+  nav,
+  ([{ isIntersecting }], observerElement) => {
+    targetIsVisible.value = isIntersecting;
+    // console.log(observerElement)
+  }
+);
+// const particlesContainer = ref(null);
+const particlesInit = async (engine: any) => {
   await loadFull(engine);
 };
 
 const tsparticles = ref(null);
-const test = () => {
-  console.log(tsparticles.value, particlesContainer.value);
-  particlesContainer.value.loadTheme("light");
-};
+// const test = () => {
+//   console.log(tsparticles.value, particlesContainer.value);
+//   particlesContainer.value.loadTheme("light");
+// };
 
 const options = {
   background: {
@@ -190,8 +193,18 @@ const optionsLight = {
   <div>
     <div class="relative h-full w-full -z-10 bg-bgblue">
       <ClientOnly>
-        <Particles v-if="isDark" :options="options" :particlesInit="particlesInit" id="tsparticles" />
-        <Particles v-else :options="optionsLight" :particlesInit="particlesInit" id="tsparticles" />
+        <Particles
+          v-if="isDark"
+          :options="options"
+          :particlesInit="particlesInit"
+          id="tsparticles"
+        />
+        <Particles
+          v-else
+          :options="optionsLight"
+          :particlesInit="particlesInit"
+          id="tsparticles"
+        />
       </ClientOnly>
     </div>
     <div ref="defRoot">

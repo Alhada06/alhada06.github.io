@@ -1,5 +1,5 @@
-<script setup>
-const headers = ["Section 1", "Sections 2", "Section 3", "Section 4"];
+<script setup lang="ts">
+const headers: string[] = ["Section 1", "Sections 2", "Section 3", "Section 4"];
 const route = useRoute();
 </script>
 

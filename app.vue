@@ -2,15 +2,6 @@
 const nuxtApp = useNuxtApp();
 const loading = ref(false);
 
-nuxtApp.hook("app:mounted", () => {
-  if (isFirstRender.value) {
-    acessCount.value = +1;
-    loading.value = true;
-  }
-
-  console.log("page mount");
-});
-
 nuxtApp.hook("page:finish", () => {
   if (isFirstRender.value) {
     // loading.value = false;
