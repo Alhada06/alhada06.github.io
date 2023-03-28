@@ -210,6 +210,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
           </transition>
         </div>
       </div>
+      <div class="flex justify-center"><TheContactForm /></div>
     </article>
 
     <div v-if="data">
