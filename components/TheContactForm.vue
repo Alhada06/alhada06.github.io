@@ -1,4 +1,11 @@
 <script setup>
+import sendgrid from "@sendgrid/mail";
+const runtimeConfig = useRuntimeConfig();
+
+if (process.server) {
+  sendgrid.setApiKey(runtimeConfig.NUXT_SENDGRID_API_KEY);
+}
+
 const form = ref({
   name: "",
   email: "",
@@ -8,7 +15,7 @@ const form = ref({
 const submit = async () => {
   console.log(form.value);
   const res = await useAsyncData("mail", () =>
-    $fetch("/api/mail", { method: "POST", body: { form: form.value } })
+    $fetch("/api/mail", { method: "GET" })
   );
   console.log(res);
 };

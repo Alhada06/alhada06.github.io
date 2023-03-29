@@ -16,8 +16,8 @@ export default defineEventHandler(async(event) => {
   //   return {
   //     api: 'works'
   //   }
-  const body= await readBody(event);
-  console.log(body)
+  // const body= await readBody(event);
+  // console.log(body)
 
 //   sendgrid.send(msg)
 //    .then(() => {
