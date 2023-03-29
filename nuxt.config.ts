@@ -90,6 +90,7 @@ export default defineNuxtConfig({
   },
    
    runtimeConfig:{
+    NUXT_SENDGRID_API_KEY: process.env.NUXT_SENDGRID_API_KEY,
     public:{
       contentfulSpace: process.env.NUXT_CONTENTFUL_SPACE,
       contentfulPublicAccessToken:

@@ -5,8 +5,12 @@ const form = ref({
   text: "",
 });
 
-const submit = () => {
+const submit = async () => {
   console.log(form.value);
+  const res = await useAsyncData("mail", () =>
+    $fetch("/api/mail", { method: "POST", body: { form: form.value } })
+  );
+  console.log(res);
 };
 </script>
 
