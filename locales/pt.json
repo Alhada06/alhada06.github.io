@@ -6,5 +6,6 @@
   "name": "Nome",
   "message": "Mensagem",
   "contact-me": "Contate-me",
-  "send": "Enviar"
+  "send": "Enviar",
+  "successMessage": "E-mail enviado com sucesso!"
 }

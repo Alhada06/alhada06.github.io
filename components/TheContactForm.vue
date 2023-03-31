@@ -44,6 +44,7 @@ const submit = async () => {
   handleSucess(data.value?.success);
   console.log(pending.value);
   console.log(data.value);
+  console.log(data.value.statusCode);
   console.log(error.value);
 };
 
@@ -120,7 +121,7 @@ const result = ref(null);
 
     <div class="md:flex md:items-center md:justify-center">
       <button
-        class="focus:shadow-outline w-1/2 rounded bg-blue-900 py-2 px-4 font-bold text-white shadow hover:bg-blue-800 focus:outline-none"
+        class="focus:shadow-outline w-1/2 rounded-sm bg-blue-900 py-2 px-4 font-bold text-white shadow hover:bg-blue-800 focus:outline-none"
         type="submit"
       >
         <span v-if="isSending">
@@ -132,11 +133,11 @@ const result = ref(null);
     <div class="mt-2 py-3 md:flex md:items-center md:justify-center">
       <span
         v-if="sent"
-        class="flex-row items-center rounded bg-green-600 p-2 text-white"
+        class="flex-row items-center rounded-sm bg-green-600 p-2 text-white"
       >
-        <Icon name="material-symbols:check-circle-outline" size="24px" /> Email
-        sent successfully!</span
-      >
+        <Icon name="material-symbols:check-circle-outline" size="24px" />
+        {{ $t("successMessage") }}
+      </span>
     </div>
   </form>
 </template>
