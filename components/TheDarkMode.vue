@@ -4,8 +4,8 @@ const toggleDark = useToggle(isDark);
 <template>
   <div>
     <button
+      class="outline-offset-2 outline-blue-400 transition delay-150 duration-300 ease-in-out hover:scale-125 hover:text-blue-700 dark:hover:text-blue-500"
       @click="toggleDark()"
-      class="transition ease-in-out delay-150 hover:scale-125 dark:hover:text-blue-500 outline-blue-400 outline-offset-2 hover:text-blue-700 duration-300"
     >
       <Transition mode="out-in" name="slide-up">
         <Icon v-if="isDark" name="material-symbols:nights-stay-rounded" />

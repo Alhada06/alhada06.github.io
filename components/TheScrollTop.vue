@@ -1,7 +1,9 @@
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script setup lang="ts">
-const { x, y, isScrolling, arrivedState, directions } = useScroll(window, {
+const { y, arrivedState, directions } = useScroll(window, {
   behavior: "smooth",
 });
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { left, right, top, bottom } = toRefs(arrivedState);
 const {
   left: toLeft,
@@ -34,7 +36,7 @@ const scrollT = () => {
     400
   );
 };
-watch(scrollPrecent, (newVal, oldVal) => {
+watch(scrollPrecent, (newVal, _oldVal) => {
   if (newVal === 0) {
     isScrollingToTop.value = false;
   }
@@ -48,7 +50,7 @@ watch(scrollPrecent, (newVal, oldVal) => {
   </div> -->
   <div
     v-if="scrollPrecent >= 25"
-    class="bottom-5 md:right-8 right-3 z-40 fixed text-blue-800 dark:text-white"
+    class="fixed bottom-5 right-3 z-40 text-blue-800 dark:text-white md:right-8"
     @click="scrollT"
   >
     <Icon

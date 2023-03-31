@@ -7,7 +7,7 @@ const emit = defineEmits(["update:isLoading"]);
 const percentage = ref(0);
 const percent = computed(() => percentage.value.toFixed());
 
-let timer = setInterval(() => {
+const timer = setInterval(() => {
   if (percentage.value < 100) {
     percentage.value += 0.1;
   } else {
@@ -21,9 +21,13 @@ let timer = setInterval(() => {
 
 <template>
   <Transition mode="in-out" :duration="500" name="fade">
-    <div v-if="isLoading"
-      class="top-0 fixed left-0 w-full h-full z-50 dark:bg-bgblue bg-slate-100 text-blue-800 dark:text-white">
-      <div class="flex justify-center items-center h-full text-5xl">{{ percent }}%</div>
+    <div
+      v-if="props.isLoading"
+      class="fixed top-0 left-0 z-50 h-full w-full bg-slate-100 text-blue-800 dark:bg-bgblue dark:text-white"
+    >
+      <div class="flex h-full items-center justify-center text-5xl">
+        {{ percent }}%
+      </div>
     </div>
   </Transition>
 </template>

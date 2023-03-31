@@ -5,7 +5,7 @@ import menusQuery from "@/graphql/queries/menus.query.gql";
 
 const config = useRuntimeConfig();
 definePageMeta({
-  middleware: defineNuxtRouteMiddleware((to, from) => {
+  middleware: defineNuxtRouteMiddleware(() => {
     if (process.server) return;
 
     if (isFirstRender.value === true) {
@@ -13,43 +13,44 @@ definePageMeta({
     }
   }),
 });
-const headers = ["Section 1", "Section 2", "Section 3", "Section 4"];
+// const headers = ["Section 1", "Section 2", "Section 3", "Section 4"];
 const root = ref(null);
 const section1 = ref(null);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { stop } = useIntersectionObserver(
   section1,
-  ([{ isIntersecting }], observerElement) => {
+  ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section1 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
 const section2 = ref(null);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { stop: stop2 } = useIntersectionObserver(
   section2,
-  ([{ isIntersecting }], observerElement) => {
+  ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section2 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
 const section3 = ref(null);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { stop: stop3 } = useIntersectionObserver(
   section3,
-  ([{ isIntersecting }], observerElement) => {
+  ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section3 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
 const section4 = ref(null);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { stop: stop4 } = useIntersectionObserver(
   section4,
-  ([{ isIntersecting }], observerElement) => {
+  ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section4 = isIntersecting;
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
-const test = () => {
-  console.log(config.public.myVar);
-};
 
 // const query = gql`
 //   query menuCollectionQuery($locale: String) {
@@ -81,7 +82,6 @@ const { result } = useQuery(
 const { result: experienceData } = useQuery(experiencesQuery, null, {
   prefetch: false,
 });
-const compData = computed(() => data);
 
 const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 </script>
@@ -91,20 +91,20 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
     <article class="mb-[500px] ml-6 scroll-pt-16">
       <h1
         ref="head"
+        class="ml-4 py-4 pl-8 text-4xl text-blue-800 dark:text-white"
         @click="refresh"
-        class="py-4 pl-8 ml-4 text-4xl dark:text-white text-blue-800"
       >
         My article - {{ config.myVar }}
       </h1>
       <div></div>
-      <section ref="section1" class="m-4 p-8 backdrop-blur-sm rounded-lg">
+      <section ref="section1" class="m-4 rounded-lg p-8 backdrop-blur-sm">
         <h2
           id="0"
-          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
+          class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
         >
           Section 1
         </h2>
-        <p class="dark:text-white text-blue-800 text-justify">
+        <p class="text-justify text-blue-800 dark:text-white">
           W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
           blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
@@ -122,14 +122,14 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
           convallis a cras semper auctor neque.
         </p>
       </section>
-      <section ref="section2" class="m-4 p-8 backdrop-blur-sm rounded-lg">
+      <section ref="section2" class="m-4 rounded-lg p-8 backdrop-blur-sm">
         <h2
           id="1"
-          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
+          class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
         >
           Section 2
         </h2>
-        <p class="dark:text-white text-blue-800 text-justify">
+        <p class="text-justify text-blue-800 dark:text-white">
           W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
           blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
@@ -147,14 +147,14 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
           convallis a cras semper auctor neque.
         </p>
       </section>
-      <section ref="section3" class="m-4 p-8 backdrop-blur-sm rounded-lg">
+      <section ref="section3" class="m-4 rounded-lg p-8 backdrop-blur-sm">
         <h2
           id="2"
-          class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900"
+          class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
         >
           Section 3
         </h2>
-        <p class="dark:text-white text-blue-800 text-justify">
+        <p class="text-justify text-blue-800 dark:text-white">
           W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
           blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
@@ -175,12 +175,12 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
       <section
         id="3"
         ref="section4"
-        class="m-4 p-8 backdrop-blur-sm rounded-lg"
+        class="m-4 rounded-lg p-8 backdrop-blur-sm"
       >
-        <h2 class="py-4 text-2xl pt-10 dark:text-slate-200 text-blue-900">
+        <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
           Section 4
         </h2>
-        <p class="dark:text-white text-blue-800 text-justify">
+        <p class="text-justify text-blue-800 dark:text-white">
           W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
           blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
@@ -199,10 +199,9 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
         </p>
       </section>
 
-      <div class="w-1/2 m-4 p-8" v-if="experienceData">
+      <div v-if="experienceData" class="m-4 w-1/2 p-8">
         <div
-          v-for="(experience, index) in experienceData?.experienceCollection
-            .items"
+          v-for="experience in experienceData?.experienceCollection.items"
           :key="experience.name"
         >
           <transition name="fade" mode="out-in" appear>
@@ -223,13 +222,14 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
     <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
 
     {{ skillsData }}----
-    <div
-      v-if="skillsData"
-      v-for="(item, index) in skillsData?.skillCollection?.items"
-      :key="index"
-    >
-      <Icon :name="item.icon" :size="item.iconSize" />---
-      {{ item.sys.id }}
+    <div v-if="skillsData">
+      <div
+        v-for="(item, index) in skillsData?.skillCollection?.items"
+        :key="index"
+      >
+        <Icon :name="item.icon" :size="item.iconSize" />---
+        {{ item.sys.id }}
+      </div>
     </div>
     <!-- <Icon name="logos:vue" /> -->
   </div>

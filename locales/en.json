@@ -1,10 +1,10 @@
 {
-    "test":"test",
-    "header":"header",
-    "appearance":"Appearance",
-    "language":"Language",
-    "name":"Name",
-    "message":"Message",
-    "contact-me":"Contact Me",
-    "send":"Send"
+  "test": "test",
+  "header": "header",
+  "appearance": "Appearance",
+  "language": "Language",
+  "name": "Name",
+  "message": "Message",
+  "contact-me": "Contact Me",
+  "send": "Send"
 }

@@ -4,9 +4,10 @@ import { loadFull } from "tsparticles";
 const nav = ref(null);
 const targetIsVisible = ref(false);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { stop } = useIntersectionObserver(
   nav,
-  ([{ isIntersecting }], observerElement) => {
+  ([{ isIntersecting }], _observerElement) => {
     targetIsVisible.value = isIntersecting;
     // console.log(observerElement)
   }
@@ -16,6 +17,7 @@ const particlesInit = async (engine: any) => {
   await loadFull(engine);
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tsparticles = ref(null);
 // const test = () => {
 //   console.log(tsparticles.value, particlesContainer.value);
@@ -108,7 +110,7 @@ const options = {
 const optionsLight = {
   background: {
     color: {
-      value: "#f1f5f9", //slate-100
+      value: "#f1f5f9", // slate-100
     },
   },
   fullScreen: {
@@ -191,19 +193,19 @@ const optionsLight = {
 </script>
 <template>
   <div>
-    <div class="relative h-full w-full -z-10 bg-bgblue">
+    <div class="relative -z-10 h-full w-full bg-bgblue">
       <ClientOnly>
         <Particles
           v-if="isDark"
-          :options="options"
-          :particlesInit="particlesInit"
           id="tsparticles"
+          :options="options"
+          :particles-init="particlesInit"
         />
         <Particles
           v-else
-          :options="optionsLight"
-          :particlesInit="particlesInit"
           id="tsparticles"
+          :options="optionsLight"
+          :particles-init="particlesInit"
         />
       </ClientOnly>
     </div>

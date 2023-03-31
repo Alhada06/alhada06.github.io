@@ -1,4 +1,5 @@
-import { MaybeComputedRef, useSessionStorage } from '@vueuse/core'
+import { useSessionStorage } from "@vueuse/core";
 
-
-export const isFirstRender  = useSessionStorage("firstRender", true,{mergeDefaults:true});
+export const isFirstRender = useSessionStorage("firstRender", true, {
+  mergeDefaults: true,
+});

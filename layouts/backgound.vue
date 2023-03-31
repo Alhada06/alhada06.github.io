@@ -89,7 +89,7 @@ const options = {
 const optionsLight = {
   background: {
     color: {
-      value: "#f1f5f9", //slate-100
+      value: "#f1f5f9", // slate-100
     },
   },
   fullScreen: {
@@ -177,15 +177,15 @@ const optionsLight = {
       <ClientOnly>
         <Particles
           v-if="isDark"
-          :options="options"
-          :particlesInit="particlesInit"
           id="tsparticles"
+          :options="options"
+          :particles-init="particlesInit"
         />
         <Particles
           v-else
-          :options="optionsLight"
-          :particlesInit="particlesInit"
           id="tsparticles"
+          :options="optionsLight"
+          :particles-init="particlesInit"
         />
       </ClientOnly>
     </div>

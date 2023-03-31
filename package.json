@@ -6,19 +6,30 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "lint:js": "npx eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "npm run lint:js && npm run lint:prettier",
+    "lintfix": "npx prettier --write --list-different . && npm run lint:js --fix"
   },
   "devDependencies": {
     "@nuxtjs/apollo": "^5.0.0-alpha.6",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/google-fonts": "^3.0.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "@vueuse/core": "^9.13.0",
     "@vueuse/nuxt": "^9.13.0",
     "autoprefixer": "^10.4.14",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "gh-pages": "^5.0.0",
     "nuxt": "3.3.2",
     "nuxt-headlessui": "^1.1.1",
     "nuxt-icon": "^0.3.3",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.7",
+    "prettier-plugin-tailwindcss": "^0.2.6",
     "tailwindcss": "^3.2.7"
   },
   "dependencies": {

@@ -6,7 +6,7 @@ const props = defineProps({
 const percentage = ref<number>(0);
 const percent = computed<string>(() => percentage.value.toFixed());
 
-let timer = setInterval(() => {
+const timer = setInterval(() => {
   if (percentage.value < props.limit) {
     percentage.value += 0.1;
   } else {
@@ -16,19 +16,19 @@ let timer = setInterval(() => {
 </script>
 
 <template>
-  <div class="container flex items-center flex-row">
+  <div class="container flex flex-row items-center">
     <div
-      class="w-full bg-transparent border-bgbluelighter rounded-sm border-b-2 border-r-2 h-5 overflow-hidden"
+      class="h-5 w-full overflow-hidden rounded-sm border-b-2 border-r-2 border-bgbluelighter bg-transparent"
     >
       <div
-        class="h-5 z-10 relative bg-blue-700 overflow-hidden"
+        class="relative z-10 h-5 overflow-hidden bg-blue-700"
         :style="{ width: percentage + '%' }"
       >
         <div
-          class="absolute bg-gradient-to-l from-white animate-ripple ease-linear"
+          class="absolute animate-ripple bg-gradient-to-l from-white ease-linear"
         ></div>
       </div>
     </div>
-    <div class="pl-2 justify-center">{{ percent }}%</div>
+    <div class="justify-center pl-2">{{ percent }}%</div>
   </div>
 </template>

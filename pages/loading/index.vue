@@ -11,7 +11,7 @@ definePageMeta({
 const percentage = ref<number>(0);
 const percent = computed<string>(() => percentage.value.toFixed());
 
-let timer = setInterval(() => {
+const timer = setInterval(() => {
   if (percentage.value < 100) {
     percentage.value += 0.1;
   } else {
@@ -25,15 +25,15 @@ let timer = setInterval(() => {
 
 <template>
   <div>
-    <div class="top-0 fixed left-0 w-full h-full">
-      <div class="flex relative justify-center items-center h-full z-10">
+    <div class="fixed top-0 left-0 h-full w-full">
+      <div class="relative z-10 flex h-full items-center justify-center">
         <div
-          class="flex absolute inset-0 justify-center pl-2 items-center h-full dark:text-slate-100 text-blue-800 text-5xl z-20"
+          class="absolute inset-0 z-20 flex h-full items-center justify-center pl-2 text-5xl text-blue-800 dark:text-slate-100"
         >
           {{ percent }}%
         </div>
         <div
-          class="loader ease-linear rounded-full border-t-blue-800 dark:border-t-blue-800 border-8 border-t-8 dark:border-slate-100/70 border-slate-400/50 h-64 w-64"
+          class="loader h-64 w-64 rounded-full border-8 border-t-8 border-slate-400/50 border-t-blue-800 ease-linear dark:border-slate-100/70 dark:border-t-blue-800"
         ></div>
       </div>
     </div>

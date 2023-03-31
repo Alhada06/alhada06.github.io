@@ -1,10 +1,10 @@
 {
-    "test":"teste",
-    "header":"cabeçalho",
-    "appearance":"Aparência",
-    "language":"Língua",
-    "name":"Nome",
-    "message":"Mensagem",
-    "contact-me":"Contate-me",
-    "send": "Enviar"
+  "test": "teste",
+  "header": "cabeçalho",
+  "appearance": "Aparência",
+  "language": "Língua",
+  "name": "Nome",
+  "message": "Mensagem",
+  "contact-me": "Contate-me",
+  "send": "Enviar"
 }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const nuxtApp = useNuxtApp();
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const loading = ref(false);
 
 nuxtApp.hook("page:finish", () => {
@@ -7,6 +8,7 @@ nuxtApp.hook("page:finish", () => {
     // loading.value = false;
     isFirstRender.value = false;
   }
+  // eslint-disable-next-line no-console
   console.log("page finished");
 });
 </script>
