@@ -14,6 +14,7 @@ const form = ref({
 
 const isSending = ref(false);
 const sent = ref(false);
+const hasError = ref(false);
 
 const handleSucess = (success) => {
   if (success) {
@@ -42,10 +43,9 @@ const submit = async () => {
   );
   isSending.value = pending.value;
   handleSucess(data.value?.success);
-  console.log(pending.value);
-  console.log(data.value);
-  console.log(data.value.statusCode);
-  console.log(error.value);
+  if (error.value) {
+    hasError.value = true;
+  }
 };
 
 const forms = ref(null);
@@ -137,6 +137,13 @@ const result = ref(null);
       >
         <Icon name="material-symbols:check-circle-outline" size="24px" />
         {{ $t("successMessage") }}
+      </span>
+      <span
+        v-if="hasError"
+        class="flex-row items-center rounded-sm bg-red-600 p-2 text-white"
+      >
+        <Icon name="material-symbols:cancel-outline" size="24px" />
+        {{ $t("errorMessage") }}
       </span>
     </div>
   </form>

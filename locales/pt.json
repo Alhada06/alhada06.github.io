@@ -7,5 +7,6 @@
   "message": "Mensagem",
   "contact-me": "Contate-me",
   "send": "Enviar",
-  "successMessage": "E-mail enviado com sucesso!"
+  "successMessage": "E-mail enviado com sucesso!",
+  "errorMessage": " Woops, ocorreu um erro, tente novamente mais tarde!"
 }

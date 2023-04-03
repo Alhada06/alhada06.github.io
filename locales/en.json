@@ -7,5 +7,6 @@
   "message": "Message",
   "contact-me": "Contact Me",
   "send": "Send",
-  "successMessage": "Email sent successfully!"
+  "successMessage": "Email sent successfully!",
+  "errorMessage": "Oops an error has occurred, please try again later!"
 }
