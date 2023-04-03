@@ -14,7 +14,7 @@ const form = ref({
 
 const isSending = ref(false);
 const sent = ref(false);
-const hasError = ref(false);
+const hasError = ref(true);
 
 const handleSucess = (success) => {
   if (success) {
@@ -130,19 +130,25 @@ const result = ref(null);
         <span v-else>{{ $t("send") }}</span>
       </button>
     </div>
-    <div class="mt-2 py-3 md:flex md:items-center md:justify-center">
+    <div
+      class="mt-2 py-3 text-left tracking-tighter md:flex md:items-center md:justify-center"
+    >
       <span
         v-if="sent"
-        class="flex-row items-center rounded-sm bg-green-600 p-2 text-white"
+        class="inline-flex flex-row items-center rounded-sm bg-green-600 p-2 text-white"
       >
-        <Icon name="material-symbols:check-circle-outline" size="24px" />
+        <span class="pr-1">
+          <Icon name="material-symbols:check-circle-outline" size="24px"
+        /></span>
         {{ $t("successMessage") }}
       </span>
       <span
         v-if="hasError"
-        class="flex-row items-center rounded-sm bg-red-600 p-2 text-white"
+        class="inline-flex flex-row items-center rounded-sm bg-red-600 p-2 text-white"
       >
-        <Icon name="material-symbols:cancel-outline" size="24px" />
+        <span class="pr-1">
+          <Icon name="material-symbols:cancel-outline" size="24px" />
+        </span>
         {{ $t("errorMessage") }}
       </span>
     </div>
