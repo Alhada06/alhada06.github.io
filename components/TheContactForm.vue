@@ -14,7 +14,7 @@ const form = ref({
 
 const isSending = ref(false);
 const sent = ref(false);
-const hasError = ref(true);
+const hasError = ref(false);
 
 const handleSucess = (success) => {
   if (success) {
