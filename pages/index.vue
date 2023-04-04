@@ -227,7 +227,10 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
         v-for="(item, index) in skillsData?.skillCollection?.items"
         :key="index"
       >
-        <Icon :name="item.icon" :size="item.iconSize" />---
+        <div>
+          <Icon :name="item.icon" :size="item.iconSize" />
+        </div>
+        ---
         {{ item.sys.id }}
       </div>
     </div>
