@@ -234,6 +234,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
         {{ item.sys.id }}
       </div>
     </div>
+    <TheIcon />
     <!-- <Icon name="logos:vue" /> -->
   </div>
 </template>
