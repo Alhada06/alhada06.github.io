@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "@nuxtjs/apollo",
     "@nuxtjs/google-fonts",
+    "@twicpics/components/nuxt3",
   ],
   googleFonts: {
     families: {
@@ -85,6 +86,9 @@ export default defineNuxtConfig({
         tokenName: "apollo-token",
       },
     },
+  },
+  twicpics: {
+    domain: "https://alhada06-github.twic.pics",
   },
 
   runtimeConfig: {

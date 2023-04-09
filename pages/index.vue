@@ -89,6 +89,10 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 const { result: certificatesData } = useQuery(certificatesQuery, null, {
   prefetch: false,
 });
+
+const imgUrl = (url) => {
+ return url.replace(`https://images.ctfassets.net/dw7ds4p9sn1i/`, "");
+};
 </script>
 
 <template>
@@ -241,8 +245,17 @@ const { result: certificatesData } = useQuery(certificatesQuery, null, {
     </div>
     <TheIcon />
     <!-- <Icon name="logos:vue" /> -->
-    <div v-if="certificatesData">
+    <div v-if="certificatesData" class="w-1/2">
       Certificates data : {{ certificatesData }}
+      <div
+        v-for="(cert, index) in certificatesData.certificateCollection.items"
+        :key="index"
+      >
+        <div @click="imgUrl(cert.image.url)">click</div>
+        <TwicImg
+          :src=imgUrl(cert.image.url)
+        />
+      </div>
     </div>
   </div>
 </template>
