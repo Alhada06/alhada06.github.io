@@ -25,7 +25,7 @@ const timer = setInterval(() => {
 
 <template>
   <div>
-    <div class="fixed top-0 left-0 h-full w-full">
+    <div class="fixed left-0 top-0 h-full w-full">
       <div class="relative z-10 flex h-full items-center justify-center">
         <div
           class="absolute inset-0 z-20 flex h-full items-center justify-center pl-2 text-5xl text-blue-800 dark:text-slate-100"

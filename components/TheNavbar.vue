@@ -6,9 +6,9 @@ const route = useRoute();
 
 <template>
   <nav
-    class="fixed top-0 left-0 right-0 z-20 bg-slate-100/80 text-blue-800 dark:bg-bgblue/80 dark:text-white dark:shadow md:relative md:bg-inherit"
+    class="fixed left-0 right-0 top-0 z-20 bg-slate-100/80 text-blue-800 dark:bg-bgblue/80 dark:text-white dark:shadow md:relative md:bg-inherit"
   >
-    <div class="mx-auto mb-2 flex h-8 items-center justify-end py-3 px-2">
+    <div class="mx-auto mb-2 flex h-8 items-center justify-end px-2 py-3">
       <!-- <a class="text-2xl hover:text-cyan-500 transition-colors cursor-pointer">Logo</a> -->
 
       <ul class="flex items-center gap-1 pr-3 md:gap-5">

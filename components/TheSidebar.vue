@@ -19,18 +19,18 @@ const router = useRouter();
   <main class="grid grid-cols-6 gap-2 pt-8">
     <Transition mode="out-in" :duration="400" name="fade">
       <aside v-if="props.isSidebarVisible" class="invisible w-full md:visible">
-        <div class="sticky top-2 left-0 z-0 opacity-50">
+        <div class="sticky left-0 top-2 z-0 opacity-50">
           <div
-            class="absolute z-0 border-t-[75px] border-l-[155px] border-b-[100px] border-t-transparent border-l-blue-300 border-b-transparent opacity-60 dark:border-l-blue-900"
+            class="absolute z-0 border-b-[100px] border-l-[155px] border-t-[75px] border-b-transparent border-l-blue-300 border-t-transparent opacity-60 dark:border-l-blue-900"
           ></div>
           <div
-            class="absolute z-0 mt-5 border-t-[75px] border-l-[155px] border-b-[100px] border-t-transparent border-l-blue-300 border-b-transparent opacity-80 dark:border-l-blue-900"
+            class="absolute z-0 mt-5 border-b-[100px] border-l-[155px] border-t-[75px] border-b-transparent border-l-blue-300 border-t-transparent opacity-80 dark:border-l-blue-900"
           ></div>
           <div
-            class="absolute z-0 mt-10 border-t-[75px] border-l-[155px] border-b-[100px] border-t-transparent border-l-blue-300 border-b-transparent opacity-60 dark:border-l-blue-900"
+            class="absolute z-0 mt-10 border-b-[100px] border-l-[155px] border-t-[75px] border-b-transparent border-l-blue-300 border-t-transparent opacity-60 dark:border-l-blue-900"
           ></div>
         </div>
-        <div class="sticky top-5 left-0 rounded-l-lg bg-opacity-70 py-6 pr-2">
+        <div class="sticky left-0 top-5 rounded-l-lg bg-opacity-70 py-6 pr-2">
           <div class="z-40">
             <NuxtLink
               v-for="(header, index) in headers"

@@ -23,7 +23,7 @@ const timer = setInterval(() => {
   <Transition mode="in-out" :duration="500" name="fade">
     <div
       v-if="props.isLoading"
-      class="fixed top-0 left-0 z-50 h-full w-full bg-slate-100 text-blue-800 dark:bg-bgblue dark:text-white"
+      class="fixed left-0 top-0 z-50 h-full w-full bg-slate-100 text-blue-800 dark:bg-bgblue dark:text-white"
     >
       <div class="flex h-full items-center justify-center text-5xl">
         {{ percent }}%

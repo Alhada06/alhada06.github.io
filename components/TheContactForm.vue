@@ -73,7 +73,7 @@ const result = ref(null);
         <input
           id="grid-first-name"
           v-model="form.name"
-          class="mb-3 block w-full appearance-none rounded border border-blue-800/30 bg-white/70 py-3 px-4 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
+          class="mb-3 block w-full appearance-none rounded border border-blue-800/30 bg-white/70 px-4 py-3 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
           type="text"
           name="name"
           placeholder="Jane"
@@ -93,7 +93,7 @@ const result = ref(null);
         <input
           id="email"
           v-model="form.email"
-          class="mb-3 block w-full appearance-none rounded border border-blue-800/30 bg-white/70 py-3 px-4 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
+          class="mb-3 block w-full appearance-none rounded border border-blue-800/30 bg-white/70 px-4 py-3 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
           type="email"
           name="email"
           required
@@ -112,7 +112,7 @@ const result = ref(null);
         <textarea
           id="message"
           v-model="form.message"
-          class="no-resize mb-3 block h-48 w-full resize-none appearance-none rounded border border-blue-800/30 bg-white/70 py-3 px-4 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
+          class="no-resize mb-3 block h-48 w-full resize-none appearance-none rounded border border-blue-800/30 bg-white/70 px-4 py-3 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
           name="message"
           required
         ></textarea>
@@ -121,7 +121,7 @@ const result = ref(null);
 
     <div class="md:flex md:items-center md:justify-center">
       <button
-        class="focus:shadow-outline w-1/2 rounded-sm bg-blue-900 py-2 px-4 font-bold text-white shadow hover:bg-blue-800 focus:outline-none"
+        class="focus:shadow-outline w-1/2 rounded-sm bg-blue-900 px-4 py-2 font-bold text-white shadow hover:bg-blue-800 focus:outline-none"
         type="submit"
       >
         <span v-if="isSending">
