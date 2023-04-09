@@ -1,0 +1,14 @@
+fragment Certificate on Certificate {
+  sys {
+    id
+  }
+  name
+  image {
+    sys {
+      id
+    }
+    title
+    fileName
+    url
+  }
+}

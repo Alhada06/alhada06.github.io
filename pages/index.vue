@@ -2,6 +2,7 @@
 import skillsQuery from "@/graphql/queries/skills.query.gql";
 import experiencesQuery from "@/graphql/queries/experiences.query.gql";
 import menusQuery from "@/graphql/queries/menus.query.gql";
+import certificatesQuery from "@/graphql/queries/certificates.query.gql";
 
 const config = useRuntimeConfig();
 definePageMeta({
@@ -84,6 +85,10 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
 });
 
 const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
+
+const { result: certificatesData } = useQuery(certificatesQuery, null, {
+  prefetch: false,
+});
 </script>
 
 <template>
@@ -236,6 +241,9 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
     </div>
     <TheIcon />
     <!-- <Icon name="logos:vue" /> -->
+    <div v-if="certificatesData">
+      Certificates data : {{ certificatesData }}
+    </div>
   </div>
 </template>
 <style scoped>
