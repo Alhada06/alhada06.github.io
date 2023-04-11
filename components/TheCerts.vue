@@ -1,13 +1,49 @@
 <script setup>
-const show = ref(true);
+import certificatesQuery from "@/graphql/queries/certificates.query.gql";
+const show = ref(false);
+
+const { locale } = useI18n();
+
+const { result: certificatesData } = useQuery(
+  certificatesQuery,
+  () => {
+    return { locale: locale.value };
+  },
+  {
+    prefetch: false,
+  }
+);
+
+const imgUrl = (url) => {
+  return url.replace(`https://images.ctfassets.net/dw7ds4p9sn1i/`, "");
+};
+const certData = ref({
+  title: "",
+  url: "",
+});
+const onOpen = (data) => {
+  certData.value.title = data.title;
+  certData.value.url = imgUrl(data.url);
+  show.value = true;
+};
+const onClose = () => {
+  show.value = false;
+  certData.value.title = "";
+  certData.value.url = "";
+};
 </script>
 
 <template>
-  <div class="m-2 flex flex-wrap p-3">
+  <div class="flex w-full flex-wrap p-1">
     <div
-      class="m-2 h-48 w-48 bg-slate-200 p-1"
-      @click="() => (show = true)"
-    ></div>
+      v-for="(cert, index) in certificatesData?.certificateCollection?.items"
+      :key="index"
+      class="m-2 h-24 w-24 bg-slate-200 p-1 md:h-48 md:w-48"
+      @click="onOpen({ title: cert.image.title, url: cert.image.url })"
+    >
+      <TwicImg :src="imgUrl(cert.image.url)" />
+    </div>
+    <!-- <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
@@ -15,8 +51,7 @@ const show = ref(true);
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <TheModal :on-close="() => (show = false)" :show="show" />
+    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div> -->
   </div>
+  <TheCertsModal :on-close="onClose" :is-open="show" :cert-data="certData" />
 </template>

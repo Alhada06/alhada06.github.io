@@ -2,7 +2,6 @@
 import skillsQuery from "@/graphql/queries/skills.query.gql";
 import experiencesQuery from "@/graphql/queries/experiences.query.gql";
 import menusQuery from "@/graphql/queries/menus.query.gql";
-import certificatesQuery from "@/graphql/queries/certificates.query.gql";
 
 const config = useRuntimeConfig();
 definePageMeta({
@@ -85,14 +84,6 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
 });
 
 const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
-
-const { result: certificatesData } = useQuery(certificatesQuery, null, {
-  prefetch: false,
-});
-
-const imgUrl = (url) => {
-  return url.replace(`https://images.ctfassets.net/dw7ds4p9sn1i/`, "");
-};
 </script>
 
 <template>
@@ -207,6 +198,17 @@ const imgUrl = (url) => {
           convallis a cras semper auctor neque.
         </p>
       </section>
+      <section
+        id="4"
+        ref="section5"
+        class="m-4 rounded-lg p-8 backdrop-blur-sm"
+      >
+        <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
+          Section 5
+        </h2>
+
+        <ClientOnly> <LazyTheCerts /></ClientOnly>
+      </section>
 
       <div v-if="experienceData" class="m-4 w-1/2 p-8">
         <div
@@ -251,13 +253,11 @@ const imgUrl = (url) => {
         v-for="(cert, index) in certificatesData.certificateCollection.items"
         :key="index"
       >
+        .... {{ cert }}
         <div @click="imgUrl(cert.image.url)">click</div>
         <TwicImg :src="imgUrl(cert.image.url)" />
       </div>
     </div> -->
-    <div>
-      <TheCerts />
-    </div>
   </div>
 </template>
 <style scoped>
