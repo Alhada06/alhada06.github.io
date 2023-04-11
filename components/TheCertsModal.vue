@@ -28,13 +28,17 @@ const props = defineProps({
     <div class="fixed inset-x-0 top-[15%] flex items-center justify-center p-4">
       <!-- The actual dialog panel -->
       <HeadlessDialogPanel
-        class="w-11/12 max-w-4xl content-center rounded bg-white align-top dark:bg-bgbluelighter lg:md:h-3/6"
+        class="w-11/12 max-w-xs content-center overflow-scroll rounded bg-white align-top dark:bg-bgbluelighter md:max-w-xl lg:md:h-3/6 2xl:max-w-4xl"
       >
         <HeadlessDialogTitle
           class="text-center text-blue-900 dark:text-white"
           >{{ props.certData?.title }}</HeadlessDialogTitle
         >
-        <HeadlessDialogDescription> helo helool </HeadlessDialogDescription>
+        <HeadlessDialogDescription
+          class="text-justify text-xl text-blue-900 dark:text-white"
+        >
+          {{ props.certData?.description }}
+        </HeadlessDialogDescription>
         <div>
           <TwicImg :src="props.certData.url" ratio="4/3" />
         </div>

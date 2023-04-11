@@ -3,6 +3,7 @@ fragment Certificate on Certificate {
     id
   }
   name
+  description
   image {
     sys {
       id
