@@ -30,12 +30,21 @@ const props = defineProps({
     <!-- Full-screen container to center the panel -->
     <div class="fixed inset-0 z-10 overflow-y-auto">
       <div
-        class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0"
       >
         <!-- The actual dialog panel -->
         <HeadlessDialogPanel
-          class="w-11/12 max-w-xs content-center rounded bg-white p-3 align-top dark:bg-bgbluelighter md:max-w-xl lg:md:h-3/6 2xl:max-w-4xl"
+          class="w-11/12 max-w-xs rounded bg-white p-3 align-top dark:bg-bgbluelighter md:max-w-xl lg:md:h-3/6 2xl:max-w-4xl"
         >
+          <div class="flex flex-row-reverse">
+            <button
+              type="button"
+              class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-base text-blue-900 outline-transparent transition delay-100 duration-100 ease-in-out hover:scale-125 hover:text-blue-700 dark:text-gray-400 dark:hover:text-white"
+              @click="props.onClose"
+            >
+              <Icon name="ic:baseline-close" size="18px" />
+            </button>
+          </div>
           <HeadlessDialogTitle
             class="m-1 pb-1 text-center align-top text-xl text-blue-900 shadow-red-500 drop-shadow-xl dark:text-white"
             >{{ props.certData?.title }}

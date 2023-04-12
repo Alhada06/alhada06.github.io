@@ -53,11 +53,16 @@ watch(scrollPrecent, (newVal, _oldVal) => {
     class="fixed bottom-5 right-3 z-40 text-blue-800 dark:text-white md:right-8"
     @click="scrollT"
   >
-    <Icon
-      v-if="isScrollingToTop"
-      size="30px"
-      name="line-md:chevron-small-triple-up"
-    />
-    <Icon v-else size="30px" name="ic:baseline-keyboard-arrow-up" />
+    <button
+      type="button"
+      class="rounded-lg bg-transparent outline-transparent transition delay-100 duration-100 ease-in-out hover:scale-125"
+    >
+      <Icon
+        v-if="isScrollingToTop"
+        size="30px"
+        name="line-md:chevron-small-triple-up"
+      />
+      <Icon v-else size="30px" name="ic:baseline-keyboard-arrow-up" />
+    </button>
   </div>
 </template>
