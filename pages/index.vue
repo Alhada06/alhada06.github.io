@@ -197,6 +197,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
           integer eget aliquet nibh praesent tristique magna sit. Gravida neque
           convallis a cras semper auctor neque.
         </p>
+        <TheSkillsContainer />
       </section>
       <section
         id="4"
@@ -216,53 +217,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
       >
         <div class="flex justify-center"><TheContactForm /></div>
       </section>
-      <!-- <div v-if="experienceData" class="m-4 w-1/2 p-8">
-        <div
-          v-for="experience in experienceData?.experienceCollection.items"
-          :key="experience.name"
-        >
-          <transition name="fade" mode="out-in" appear>
-            <TheProgressBar :limit="experience.precentage" />
-          </transition>
-        </div>
-      </div> -->
     </article>
-
-    <!-- <div v-if="data">
-      async: {{ data }}----
-
-      <div v-for="(menu, index) in result?.menuCollection?.items" :key="index">
-        {{ menu.name }}
-      </div>
-    </div>
-    <div v-if="experienceData">--- experience data:{{ experienceData }}</div>
-
-    {{ skillsData }}----
-    <div v-if="skillsData">
-      <div
-        v-for="(item, index) in skillsData?.skillCollection?.items"
-        :key="index"
-      >
-        <div>
-          <Icon :name="item.icon" :size="item.iconSize" />
-        </div>
-        ---
-        {{ item.sys.id }}
-      </div>
-    </div>
-    <TheIcon />
-    <Icon name="logos:vue" /> -->
-    <!-- <div v-if="certificatesData" class="w-1/2">
-      Certificates data : {{ certificatesData }}
-      <div
-        v-for="(cert, index) in certificatesData.certificateCollection.items"
-        :key="index"
-      >
-        .... {{ cert }}
-        <div @click="imgUrl(cert.image.url)">click</div>
-        <TwicImg :src="imgUrl(cert.image.url)" />
-      </div>
-    </div> -->
   </div>
 </template>
 <style scoped>
