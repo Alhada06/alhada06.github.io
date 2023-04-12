@@ -90,13 +90,13 @@ export default defineNuxtConfig({
   twicpics: {
     domain: "https://alhada06-github.twic.pics",
   },
-
   runtimeConfig: {
     NUXT_SENDGRID_API_KEY: process.env.NUXT_SENDGRID_API_KEY,
     public: {
       contentfulSpace: process.env.NUXT_CONTENTFUL_SPACE,
       contentfulPublicAccessToken:
         process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
+      twicpics: { domain: "https://alhada06-github.twic.pics" },
     },
   },
 });
