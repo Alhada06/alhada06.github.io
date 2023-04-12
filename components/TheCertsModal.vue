@@ -39,7 +39,7 @@ const props = defineProps({
           <div class="flex flex-row-reverse">
             <button
               type="button"
-              class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-base text-blue-900 outline-transparent transition delay-100 duration-100 ease-in-out hover:scale-125 hover:text-blue-700 dark:text-gray-400 dark:hover:text-white"
+              class="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-base text-blue-900 outline-none outline-transparent transition delay-100 duration-100 ease-in-out hover:scale-125 hover:text-blue-700 focus:outline-none dark:text-gray-400 dark:hover:text-white"
               @click="props.onClose"
             >
               <Icon name="ic:baseline-close" size="18px" />
