@@ -41,7 +41,7 @@ const onClose = () => {
     <div
       v-for="(cert, index) in certificatesData?.certificateCollection?.items"
       :key="index"
-      class="m-2 h-24 w-24 bg-slate-200 p-1 md:h-48 md:w-48"
+      class="m-2 h-24 w-24 rounded bg-slate-200 p-1 drop-shadow-md dark:bg-bgbluelighter dark:shadow-white md:h-48 md:w-48"
       @click="
         onOpen({
           title: cert.name,
@@ -50,7 +50,7 @@ const onClose = () => {
         })
       "
     >
-      <TwicImg :src="imgUrl(cert.image.url)" />
+      <TwicImg class="rounded" :src="imgUrl(cert.image.url)" />
     </div>
     <!-- <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
     <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>

@@ -204,13 +204,19 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
         class="m-4 rounded-lg p-8 backdrop-blur-sm"
       >
         <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
-          Section 5
+          {{ $t("certsSection") }}
         </h2>
 
         <ClientOnly> <LazyTheCerts /></ClientOnly>
       </section>
-
-      <div v-if="experienceData" class="m-4 w-1/2 p-8">
+      <section
+        id="5"
+        ref="section6"
+        class="m-4 rounded-lg p-8 backdrop-blur-sm"
+      >
+        <div class="flex justify-center"><TheContactForm /></div>
+      </section>
+      <!-- <div v-if="experienceData" class="m-4 w-1/2 p-8">
         <div
           v-for="experience in experienceData?.experienceCollection.items"
           :key="experience.name"
@@ -219,11 +225,10 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
             <TheProgressBar :limit="experience.precentage" />
           </transition>
         </div>
-      </div>
-      <div class="flex justify-center"><TheContactForm /></div>
+      </div> -->
     </article>
 
-    <div v-if="data">
+    <!-- <div v-if="data">
       async: {{ data }}----
 
       <div v-for="(menu, index) in result?.menuCollection?.items" :key="index">
@@ -246,7 +251,7 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
       </div>
     </div>
     <TheIcon />
-    <!-- <Icon name="logos:vue" /> -->
+    <Icon name="logos:vue" /> -->
     <!-- <div v-if="certificatesData" class="w-1/2">
       Certificates data : {{ certificatesData }}
       <div

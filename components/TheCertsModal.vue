@@ -22,28 +22,40 @@ const props = defineProps({
     @close="props.onClose"
   >
     <!-- The backdrop, rendered as a fixed sibling to the panel container -->
-    <div class="fixed inset-0 bg-black/90" aria-hidden="true" />
+    <div
+      class="fixed inset-0 bg-black/90 bg-opacity-75 transition-opacity"
+      aria-hidden="true"
+    />
 
     <!-- Full-screen container to center the panel -->
-    <div class="fixed inset-x-0 top-[15%] flex items-center justify-center p-4">
-      <!-- The actual dialog panel -->
-      <HeadlessDialogPanel
-        class="w-11/12 max-w-xs content-center overflow-scroll rounded bg-white align-top dark:bg-bgbluelighter md:max-w-xl lg:md:h-3/6 2xl:max-w-4xl"
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div
+        class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
       >
-        <HeadlessDialogTitle
-          class="text-center text-blue-900 dark:text-white"
-          >{{ props.certData?.title }}</HeadlessDialogTitle
+        <!-- The actual dialog panel -->
+        <HeadlessDialogPanel
+          class="w-11/12 max-w-xs content-center rounded bg-white p-3 align-top dark:bg-bgbluelighter md:max-w-xl lg:md:h-3/6 2xl:max-w-4xl"
         >
-        <HeadlessDialogDescription
-          class="text-justify text-xl text-blue-900 dark:text-white"
-        >
-          {{ props.certData?.description }}
-        </HeadlessDialogDescription>
-        <div>
-          <TwicImg :src="props.certData.url" ratio="4/3" />
-        </div>
-        <!-- ... -->
-      </HeadlessDialogPanel>
+          <HeadlessDialogTitle
+            class="m-1 pb-1 text-center align-top text-xl text-blue-900 shadow-red-500 drop-shadow-xl dark:text-white"
+            >{{ props.certData?.title }}
+          </HeadlessDialogTitle>
+
+          <div class="rounded-md">
+            <TwicImg
+              class="rounded-md drop-shadow-xl dark:shadow-white"
+              :src="props.certData.url"
+              ratio="4/3"
+            />
+          </div>
+          <HeadlessDialogDescription
+            class="m-1 p-2 text-justify text-base text-blue-900 dark:text-white"
+          >
+            {{ props.certData?.description }}
+          </HeadlessDialogDescription>
+          <!-- ... -->
+        </HeadlessDialogPanel>
+      </div>
     </div>
   </HeadlessDialog>
 </template>
