@@ -9,5 +9,6 @@
   "send": "Enviar",
   "successMessage": "E-mail enviado com sucesso!",
   "errorMessage": " Woops, ocorreu um erro, tente novamente mais tarde!",
-  "certsSection": "Certificados e Diplomas"
+  "certsSection": "Certificados e Diplomas",
+  "skills": "Competências"
 }

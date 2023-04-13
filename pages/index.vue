@@ -85,7 +85,7 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
 
 <template>
   <div ref="root">
-    <article class="mb-10 scroll-pt-16">
+    <article class="mx-2 mb-10 scroll-pt-16 md:mx-3">
       <h1
         ref="head"
         class="ml-4 py-4 pl-8 text-4xl text-blue-800 dark:text-white"
@@ -94,7 +94,10 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
         My article - {{ config.myVar }}
       </h1>
       <div></div>
-      <section ref="section1" class="m-4 rounded-lg p-8 backdrop-blur-sm">
+      <section
+        ref="section1"
+        class="m-4 rounded-lg p-4 backdrop-blur-sm md:p-8 lg:m-4"
+      >
         <h2
           id="0"
           class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
@@ -119,7 +122,10 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
           convallis a cras semper auctor neque.
         </p>
       </section>
-      <section ref="section2" class="m-4 rounded-lg p-8 backdrop-blur-sm">
+      <section
+        ref="section2"
+        class="m-4 rounded-lg p-4 backdrop-blur-sm md:p-8"
+      >
         <h2
           id="1"
           class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
@@ -144,7 +150,10 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
           convallis a cras semper auctor neque.
         </p>
       </section>
-      <section ref="section3" class="m-4 rounded-lg p-8 backdrop-blur-sm">
+      <section
+        ref="section3"
+        class="m-4 rounded-lg p-4 backdrop-blur-sm md:p-8"
+      >
         <h2
           id="2"
           class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
@@ -172,10 +181,10 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
       <section
         id="3"
         ref="section4"
-        class="m-4 rounded-lg p-8 backdrop-blur-sm"
+        class="m-4 rounded-lg p-4 backdrop-blur-sm md:p-8"
       >
         <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
-          Skills
+          {{ $t("skills") }}
         </h2>
 
         <TheSkillsContainer />
@@ -183,7 +192,7 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
       <section
         id="4"
         ref="section5"
-        class="m-4 rounded-lg p-8 backdrop-blur-sm"
+        class="m-4 rounded-lg p-4 backdrop-blur-sm md:p-8"
       >
         <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
           {{ $t("certsSection") }}
@@ -194,7 +203,7 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
       <section
         id="5"
         ref="section6"
-        class="m-4 rounded-lg p-8 backdrop-blur-sm"
+        class="m-4 rounded-lg p-4 backdrop-blur-sm md:p-8"
       >
         <div class="flex justify-center"><TheContactForm /></div>
       </section>
