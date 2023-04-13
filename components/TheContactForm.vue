@@ -54,7 +54,12 @@ const result = ref(null);
 </script>
 
 <template>
-  <form id="forms" ref="forms" class="w-full max-w-lg" @submit.prevent="submit">
+  <form
+    id="forms"
+    ref="forms"
+    class="mb-5 w-full max-w-lg"
+    @submit.prevent="submit"
+  >
     <div class="md:flex md:items-center md:justify-center">
       <div
         class="mb-3 pb-4 text-center font-bold capitalize text-blue-800 dark:text-white"
@@ -119,7 +124,9 @@ const result = ref(null);
       </div>
     </div>
 
-    <div class="md:flex md:items-center md:justify-center">
+    <div
+      class="flex items-center justify-center md:flex md:items-center md:justify-center"
+    >
       <button
         class="focus:shadow-outline w-1/2 rounded-sm bg-blue-900 px-4 py-2 font-bold text-white shadow hover:bg-blue-800 focus:outline-none"
         type="submit"

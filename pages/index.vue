@@ -85,7 +85,7 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
 
 <template>
   <div ref="root">
-    <article class="mb-[500px] ml-6 scroll-pt-16">
+    <article class="mb-10 scroll-pt-16">
       <h1
         ref="head"
         class="ml-4 py-4 pl-8 text-4xl text-blue-800 dark:text-white"
