@@ -1,5 +1,4 @@
 <script setup>
-import skillsQuery from "@/graphql/queries/skills.query.gql";
 import experiencesQuery from "@/graphql/queries/experiences.query.gql";
 import menusQuery from "@/graphql/queries/menus.query.gql";
 
@@ -82,8 +81,6 @@ const { result } = useQuery(
 const { result: experienceData } = useQuery(experiencesQuery, null, {
   prefetch: false,
 });
-
-const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
 </script>
 
 <template>
@@ -178,25 +175,9 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
         class="m-4 rounded-lg p-8 backdrop-blur-sm"
       >
         <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
-          Section 4
+          Skills
         </h2>
-        <p class="text-justify text-blue-800 dark:text-white">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
-          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
-          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
-          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
-          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
-          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
-          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
-          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
-          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
-          convallis a cras semper auctor neque. amet venenatis urna cursus eget
-          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
-          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
-          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
-          convallis a cras semper auctor neque.
-        </p>
+
         <TheSkillsContainer />
       </section>
       <section

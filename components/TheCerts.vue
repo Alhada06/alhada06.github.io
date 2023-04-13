@@ -52,17 +52,7 @@ const onClose = () => {
         "
       >
         <TwicImg class="rounded" :src="imgUrl(cert.image.url)" />
-      </div>
-      <!-- <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div>
-    <div class="m-2 h-48 w-48 bg-slate-200 p-1"></div> -->
-    </div></TwicView
-  >
+      </div></div
+  ></TwicView>
   <TheCertsModal :on-close="onClose" :is-open="show" :cert-data="certData" />
 </template>
