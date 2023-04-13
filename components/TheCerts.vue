@@ -14,9 +14,6 @@ const { result: certificatesData } = useQuery(
   }
 );
 
-const imgUrl = (url) => {
-  return url.replace(`https://images.ctfassets.net/dw7ds4p9sn1i/`, "");
-};
 const certData = ref({
   title: "",
   description: "",
@@ -25,7 +22,7 @@ const certData = ref({
 const onOpen = (data) => {
   certData.value.title = data.title;
   certData.value.description = data.description;
-  certData.value.url = imgUrl(data.url);
+  certData.value.url = useShortUrl(data.url);
   show.value = true;
 };
 const onClose = () => {
@@ -51,7 +48,7 @@ const onClose = () => {
           })
         "
       >
-        <TwicImg class="rounded" :src="imgUrl(cert.image.url)" />
+        <TwicImg class="rounded" :src="useShortUrl(cert.image.url)" />
       </div></div
   ></TwicView>
   <TheCertsModal :on-close="onClose" :is-open="show" :cert-data="certData" />

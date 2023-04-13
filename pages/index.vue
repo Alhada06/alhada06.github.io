@@ -51,21 +51,6 @@ const { stop: stop4 } = useIntersectionObserver(
   { rootMargin: "0px 0px -80% 0px" }
 );
 
-// const query = gql`
-//   query menuCollectionQuery($locale: String) {
-//     menuCollection(locale: $locale) {
-//       total
-//       items {
-//         name
-//         sys {
-//           id
-//         }
-//         # add the fields you want to query
-//       }
-//     }
-//   }
-// `;
-
 const { locale } = useI18n();
 const { data, refresh } = await useAsyncQuery(menusQuery, {
   locale: locale.value,
@@ -158,25 +143,9 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
           id="2"
           class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
         >
-          Section 3
+          Projects
         </h2>
-        <p class="text-justify text-blue-800 dark:text-white">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
-          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
-          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
-          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
-          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
-          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
-          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
-          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
-          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
-          convallis a cras semper auctor neque. amet venenatis urna cursus eget
-          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
-          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
-          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
-          convallis a cras semper auctor neque.
-        </p>
+        <TheProjects />
       </section>
       <section
         id="3"
