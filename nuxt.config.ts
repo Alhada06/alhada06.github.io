@@ -52,16 +52,16 @@ export default defineNuxtConfig({
       redirectOn: "root", // recommended
     },
     // add `vueI18n` option to `@nuxtjs/i18n` module options
-    vueI18n: {
-      messages: {
-        en: {
-          welcome: "Welcome",
-        },
-        pt: {
-          welcome: "Bem vindo",
-        },
-      },
-    },
+    // vueI18n: {
+    //   messages: {
+    //     en: {
+    //       welcome: "Welcome",
+    //     },
+    //     pt: {
+    //       welcome: "Bem vindo",
+    //     },
+    //   },
+    // },
   },
   headlessui: {
     prefix: "Headless",
