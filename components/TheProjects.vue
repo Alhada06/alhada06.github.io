@@ -12,6 +12,26 @@ const { result: projectsData } = useQuery(
     prefetch: false,
   }
 );
+
+const show = ref(false);
+
+const projectData = ref({
+  name: "",
+  description: "",
+  url: "",
+});
+const onOpen = (data) => {
+  projectData.value.name = data.name;
+  projectData.value.description = data.description;
+  projectData.value.url = useShortUrl(data.url);
+  show.value = true;
+};
+const onClose = () => {
+  show.value = false;
+  projectData.value.name = "";
+  projectData.value.description = "";
+  projectData.value.url = "";
+};
 </script>
 
 <template>
@@ -21,9 +41,16 @@ const { result: projectsData } = useQuery(
         v-for="(project, index) in projectsData?.projectCollection?.items"
         :key="index"
         class="flex flex-col justify-center rounded p-1"
+        @click="
+          onOpen({
+            name: project.name,
+            description: project.description,
+            url: project.image.url,
+          })
+        "
       >
         <div
-          class="m-2 h-24 w-20 rounded bg-slate-200 p-1 drop-shadow-md dark:bg-bgbluelighter dark:shadow-white md:h-40 md:w-32 lg:h-[200px] lg:w-40"
+          class="m-2 h-24 w-20 cursor-pointer rounded bg-slate-200 p-1 drop-shadow-md dark:bg-bgbluelighter dark:shadow-white md:h-40 md:w-32 lg:h-[200px] lg:w-40"
         >
           <TwicImg
             class="rounded"
@@ -39,4 +66,9 @@ const { result: projectsData } = useQuery(
       </div>
     </div>
   </TwicView>
+  <TheProjectModal
+    :is-open="show"
+    :on-close="onClose"
+    :project-data="projectData"
+  />
 </template>

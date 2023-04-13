@@ -12,12 +12,12 @@ const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
     >
       <div class="text-center">
         <Icon
-          class="content-center text-center text-3xl transition duration-150 ease-in-out group-hover/icon:scale-125 md:text-7xl"
+          class="content-center text-center text-3xl transition duration-150 ease-in-out will-change-auto group-hover/icon:scale-125 md:text-7xl"
           :name="skill.icon"
         />
       </div>
       <div
-        class="invisible m-1 p-1 pt-2 text-center text-[9px] tracking-tighter text-blue-900 transition duration-150 ease-in-out group-hover/icon:visible group-hover/icon:scale-125 dark:text-white md:text-xs lg:text-sm"
+        class="invisible m-1 p-1 pt-2 text-center text-[9px] tracking-tighter text-blue-900 transition duration-150 ease-in-out will-change-auto group-hover/icon:visible group-hover/icon:scale-125 dark:text-white md:text-xs lg:text-sm"
       >
         {{ skill.name }}
       </div>

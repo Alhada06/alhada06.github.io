@@ -39,7 +39,7 @@ const onClose = () => {
       <div
         v-for="(cert, index) in certificatesData?.certificateCollection?.items"
         :key="index"
-        class="m-2 h-24 w-24 rounded bg-slate-200 p-1 drop-shadow-md dark:bg-bgbluelighter dark:shadow-white md:h-40 md:w-40 lg:h-48 lg:w-48"
+        class="m-2 h-24 w-24 cursor-pointer rounded bg-slate-200 p-1 drop-shadow-md transition duration-150 ease-in-out will-change-auto hover:scale-105 dark:bg-bgbluelighter dark:shadow-white md:h-40 md:w-40 lg:h-48 lg:w-48"
         @click="
           onOpen({
             title: cert.name,
