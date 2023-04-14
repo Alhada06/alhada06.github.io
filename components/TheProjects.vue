@@ -17,19 +17,25 @@ const show = ref(false);
 
 const projectData = ref({
   name: "",
+  ghUrl: "",
   description: "",
+  stack: [],
   url: "",
 });
 const onOpen = (data) => {
   projectData.value.name = data.name;
+  projectData.value.ghUrl = data.ghUrl;
   projectData.value.description = data.description;
+  projectData.value.stack = data.stack;
   projectData.value.url = useShortUrl(data.url);
   show.value = true;
 };
 const onClose = () => {
   show.value = false;
   projectData.value.name = "";
+  projectData.value.ghUrl = "";
   projectData.value.description = "";
+  projectData.value = [];
   projectData.value.url = "";
 };
 </script>
@@ -40,11 +46,13 @@ const onClose = () => {
       <div
         v-for="(project, index) in projectsData?.projectCollection?.items"
         :key="index"
-        class="flex flex-col justify-center rounded p-1"
+        class="flex flex-col justify-center rounded p-1 text-center"
         @click="
           onOpen({
             name: project.name,
             description: project.description,
+            stack: project.stack,
+            ghUrl: project.ghUrl,
             url: project.image.url,
           })
         "
@@ -64,6 +72,7 @@ const onClose = () => {
           {{ project.name }}
         </div>
       </div>
+      <!-- {{ projectsData }} -->
     </div>
   </TwicView>
   <TheProjectModal

@@ -30,7 +30,7 @@ const props = defineProps({
     <!-- Full-screen container to center the panel -->
     <div class="fixed inset-0 z-10 overflow-y-auto">
       <div
-        class="flex min-h-full items-start justify-center p-4 text-center sm:items-center sm:p-0"
+        class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0"
       >
         <!-- The actual dialog panel -->
         <HeadlessDialogPanel
