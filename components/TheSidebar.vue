@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const headers: string[] = ["Section 1", "Sections 2", "Section 3", "Section 4"];
+const headers: string[] = [
+  "Section 1",
+  "Section 2",
+  "Section 3",
+  "Section 4",
+  "Section 5",
+];
 
 const props = defineProps({
   isSidebarVisible: Boolean,
@@ -36,13 +42,13 @@ const router = useRouter();
               v-for="(header, index) in headers"
               :key="header"
               :to="'/#' + index"
-              class="z-30 m-1 block w-fit pl-2 tracking-tight text-blue-800 no-underline transition delay-150 duration-300 ease-in-out hover:scale-110 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
+              class="z-30 m-1 block w-fit pl-2 tracking-tight text-blue-800 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
               :class="{
-                'rounded-l-xl border-b-2 border-solid  border-blue-500':
+                'underline decoration-blue-500 decoration-solid decoration-1 underline-offset-8':
                   isIntersectingSection['Section' + (index + 1)],
               }"
             >
-              {{ header }}</NuxtLink
+              {{ $t(header) }}</NuxtLink
             >
           </div>
         </div>
