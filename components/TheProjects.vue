@@ -19,7 +19,7 @@ const projectData = ref({
   name: "",
   ghUrl: "",
   description: "",
-  stack: [],
+  stack: null,
   url: "",
 });
 const onOpen = (data) => {
@@ -35,7 +35,7 @@ const onClose = () => {
   projectData.value.name = "";
   projectData.value.ghUrl = "";
   projectData.value.description = "";
-  projectData.value = [];
+  projectData.value.stack = null;
   projectData.value.url = "";
 };
 </script>
@@ -51,7 +51,7 @@ const onClose = () => {
           onOpen({
             name: project.name,
             description: project.description,
-            stack: project.stack,
+            stack: project.stackCollection.items,
             ghUrl: project.ghUrl,
             url: project.image.url,
           })
@@ -72,7 +72,6 @@ const onClose = () => {
           {{ project.name }}
         </div>
       </div>
-      <!-- {{ projectsData }} -->
     </div>
   </TwicView>
   <TheProjectModal

@@ -145,7 +145,7 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
         >
           Projects
         </h2>
-        <TheProjects />
+        <ClientOnly><TheProjects /></ClientOnly>
       </section>
       <section
         id="3"

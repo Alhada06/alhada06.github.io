@@ -47,7 +47,7 @@ const props = defineProps({
           </div>
           <div class="flex flex-col">
             <div class="flex w-full flex-row">
-              <div class="h-full w-1/3 shrink-0 rounded-md">
+              <div class="h-4/6 w-1/3 shrink-0 rounded-md">
                 <TwicImg
                   class="rounded-md drop-shadow-xl dark:shadow-white"
                   :src="props.projectData.url"
@@ -70,20 +70,31 @@ const props = defineProps({
                   /></NuxtLink>
                 </div>
                 <HeadlessDialogDescription
-                  class="m-1 p-2 text-justify text-xs tracking-tighter text-blue-900 dark:text-white md:text-base md:tracking-tight"
+                  class="m-1 hyphens-auto p-2 text-justify text-xs tracking-tighter text-blue-900 dark:text-white/80 md:text-sm"
                 >
                   {{ props.projectData?.description }}
                 </HeadlessDialogDescription>
               </div>
             </div>
             <div
-              class="m-1 inline-flex w-full flex-wrap justify-evenly space-x-1 p-2"
+              class="mx-1 mt-1 inline-flex w-full flex-wrap justify-evenly space-x-1 px-2 pt-2"
             >
               <div
                 v-for="(tech, index) in props.projectData.stack"
                 :key="index"
+                class="group/icon mt-1 flex flex-col"
               >
-                <Icon :name="tech" size="30px" />
+                <div class="text-center">
+                  <Icon
+                    class="content-center text-center text-lg transition duration-150 ease-in-out will-change-auto group-hover/icon:scale-125 md:text-2xl"
+                    :name="tech.icon"
+                  />
+                </div>
+                <div
+                  class="invisible px-1 pt-2 text-center text-[9px] tracking-tighter text-blue-900 transition duration-150 ease-in-out will-change-auto group-hover/icon:visible group-hover/icon:scale-125 dark:text-white md:text-xs lg:text-sm"
+                >
+                  {{ tech.name }}
+                </div>
               </div>
             </div>
           </div>

@@ -5,12 +5,17 @@ fragment Project on Project {
   name
   description
   ghUrl
-  stack
   image {
     sys {
       id
     }
     title
     url
+  }
+  stackCollection {
+    items {
+      name
+      icon
+    }
   }
 }
