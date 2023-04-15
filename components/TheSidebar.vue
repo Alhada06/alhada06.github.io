@@ -37,7 +37,7 @@ const router = useRouter();
           ></div>
         </div>
         <div
-          class="sticky left-0 top-5 mt-3 w-3/6 rounded-r-2xl bg-bgbluelighter bg-opacity-50 py-6 pr-2"
+          class="sticky left-0 top-5 mt-3 w-3/6 rounded-r-2xl bg-blue-200 bg-opacity-50 py-6 pr-2 dark:bg-blue-800/25"
         >
           <div class="z-40">
             <NuxtLink
