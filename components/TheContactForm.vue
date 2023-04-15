@@ -81,7 +81,6 @@ const result = ref(null);
           class="mb-3 block w-full appearance-none rounded border border-blue-800/30 bg-white/70 px-4 py-3 leading-tight text-blue-800 focus:border-blue-800 focus:bg-white/90 focus:outline-none dark:border-slate-200/30 dark:bg-bgbluelighter/70 dark:text-white dark:focus:border-slate-200 dark:focus:bg-bgbluelighter/90"
           type="text"
           name="name"
-          placeholder="Jane"
           required
         />
         <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->

@@ -24,8 +24,8 @@ const router = useRouter();
   <!-- route.fullPath === '/#' + index, -->
   <main class="grid grid-cols-6 gap-2 pt-8">
     <Transition mode="out-in" :duration="400" name="fade">
-      <aside v-if="props.isSidebarVisible" class="invisible w-full md:visible">
-        <div class="sticky left-0 top-2 z-0 opacity-50">
+      <aside v-if="props.isSidebarVisible" class="invisible w-5/6 md:visible">
+        <div class="sticky left-0 z-0 opacity-50 md:top-10 xl:top-5 2xl:top-2">
           <div
             class="absolute z-0 border-b-[100px] border-l-[155px] border-t-[75px] border-b-transparent border-l-blue-300 border-t-transparent opacity-60 dark:border-l-blue-900"
           ></div>
@@ -36,13 +36,15 @@ const router = useRouter();
             class="absolute z-0 mt-10 border-b-[100px] border-l-[155px] border-t-[75px] border-b-transparent border-l-blue-300 border-t-transparent opacity-60 dark:border-l-blue-900"
           ></div>
         </div>
-        <div class="sticky left-0 top-5 rounded-l-lg bg-opacity-70 py-6 pr-2">
+        <div
+          class="sticky left-0 top-5 mt-3 w-3/6 rounded-r-2xl bg-bgbluelighter bg-opacity-50 py-6 pr-2"
+        >
           <div class="z-40">
             <NuxtLink
               v-for="(header, index) in headers"
               :key="header"
               :to="'/#' + index"
-              class="z-30 m-1 block w-fit pl-2 tracking-tight text-blue-800 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
+              class="z-30 m-1 block w-fit pl-2 text-sm tracking-tight text-blue-800 transition delay-150 duration-300 ease-in-out hover:scale-110 hover:text-blue-700 dark:text-white dark:hover:text-blue-500"
               :class="{
                 'underline decoration-blue-500 decoration-solid decoration-1 underline-offset-8':
                   isIntersectingSection['Section' + (index + 1)],

@@ -1,8 +1,4 @@
 <script setup>
-import experiencesQuery from "@/graphql/queries/experiences.query.gql";
-import menusQuery from "@/graphql/queries/menus.query.gql";
-
-const config = useRuntimeConfig();
 definePageMeta({
   middleware: defineNuxtRouteMiddleware(() => {
     if (process.server) return;
@@ -59,22 +55,6 @@ const { stop: stop5 } = useIntersectionObserver(
   },
   { rootMargin: "0px 0px -80% 0px" }
 );
-
-const { locale } = useI18n();
-const { data, refresh } = await useAsyncQuery(menusQuery, {
-  locale: locale.value,
-});
-const { result } = useQuery(
-  menusQuery,
-  () => {
-    return { locale: locale.value };
-  },
-  { prefetch: false }
-);
-
-const { result: experienceData } = useQuery(experiencesQuery, null, {
-  prefetch: false,
-});
 </script>
 
 <template>
@@ -83,9 +63,8 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
       <h1
         ref="head"
         class="ml-4 py-4 pl-8 text-4xl text-blue-800 dark:text-white"
-        @click="refresh"
       >
-        My article - {{ config.myVar }}
+        Diogo Alhada, Im a Developer.
       </h1>
       <div></div>
       <section
@@ -96,25 +75,9 @@ const { result: experienceData } = useQuery(experiencesQuery, null, {
           id="0"
           class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200"
         >
-          Section 1
+          {{ $t("about") }}
         </h2>
-        <p class="text-justify text-blue-800 dark:text-white">
-          W Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed
-          blandit libero volutpat. Tempor id eu nisl nunc mi. In tellus integer
-          feugiat scelerisque varius morbi. At imperdiet dui accumsan sit. Id
-          ornare arcu odio ut sem nulla pharetra diam sit. Urna nunc id cursus
-          metus aliquam eleifend. Amet luctus venenatis lectus magna fringilla
-          urna porttitor. Dignissim enim sit amet venenatis urna cursus eget
-          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
-          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
-          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
-          convallis a cras semper auctor neque. amet venenatis urna cursus eget
-          nunc scelerisque. Elementum sagittis vitae et leo duis. Convallis
-          aenean et tortor at risus viverra adipiscing at in. Turpis egestas
-          integer eget aliquet nibh praesent tristique magna sit. Gravida neque
-          convallis a cras semper auctor neque.
-        </p>
+        <TheAbout />
       </section>
       <section
         ref="section2"
