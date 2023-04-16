@@ -17,8 +17,8 @@
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/google-fonts": "^3.0.0",
     "@typescript-eslint/parser": "^5.58.0",
-    "@vueuse/core": "^9.13.0",
-    "@vueuse/nuxt": "^9.13.0",
+    "@vueuse/core": "^10.0.2",
+    "@vueuse/nuxt": "^10.0.2",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
@@ -27,16 +27,16 @@
     "nuxt": "^3.4.1",
     "nuxt-headlessui": "^1.1.1",
     "nuxt-icon": "^0.3.3",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.22",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "tailwindcss": "^3.3.1"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.5",
-    "@twicpics/components": "^0.17.0",
+    "@twicpics/components": "^0.17.1",
     "@types/node": "^18.15.11",
-    "@vueuse/components": "^9.13.0",
+    "@vueuse/components": "^10.0.2",
     "tsparticles": "^2.9.3",
     "vue3-particles": "^2.9.3"
   }
