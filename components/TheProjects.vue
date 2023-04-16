@@ -46,7 +46,7 @@ const onClose = () => {
       <div
         v-for="(project, index) in projectsData?.projectCollection?.items"
         :key="index"
-        class="flex flex-col justify-center rounded p-1 text-center"
+        class="group/project flex flex-col justify-center rounded p-1 text-center"
         @click="
           onOpen({
             name: project.name,
@@ -58,7 +58,7 @@ const onClose = () => {
         "
       >
         <div
-          class="m-2 h-24 w-20 cursor-pointer rounded bg-slate-200 p-1 drop-shadow-md dark:bg-bgbluelighter dark:shadow-white md:h-40 md:w-32 lg:h-[200px] lg:w-40"
+          class="m-2 h-24 w-20 cursor-pointer rounded bg-slate-200 p-1 drop-shadow-md transition duration-150 ease-in-out will-change-auto group-hover/project:scale-125 dark:bg-bgbluelighter dark:shadow-white md:h-40 md:w-32 lg:h-[200px] lg:w-40"
         >
           <TwicImg
             class="rounded"
@@ -67,7 +67,7 @@ const onClose = () => {
           />
         </div>
         <div
-          class="m-1 p-1 pt-2 text-center text-[9px] tracking-tighter text-blue-900 dark:text-white md:text-xs lg:text-sm"
+          class="m-1 p-1 pt-2 text-center text-[9px] tracking-tighter text-blue-900 transition duration-150 ease-in-out will-change-auto group-hover/project:scale-110 dark:text-white md:text-xs lg:text-sm"
         >
           {{ project.name }}
         </div>

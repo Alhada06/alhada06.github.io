@@ -70,7 +70,7 @@ const props = defineProps({
                   /></NuxtLink>
                 </div>
                 <HeadlessDialogDescription
-                  class="m-1 hyphens-auto p-2 text-justify text-xs tracking-tighter text-blue-900 dark:text-white/80 md:text-sm"
+                  class="m-1 hyphens-auto whitespace-pre-wrap p-2 text-justify text-xs tracking-tighter text-blue-900 dark:text-white/80 md:text-sm"
                 >
                   {{ props.projectData?.description }}
                 </HeadlessDialogDescription>

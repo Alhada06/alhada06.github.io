@@ -18,7 +18,7 @@ const timer = setInterval(() => {
 <template>
   <div class="container flex flex-row items-center">
     <div
-      class="h-5 w-full overflow-hidden rounded-sm border-b-2 border-r-2 border-bgbluelighter bg-transparent"
+      class="h-5 w-full overflow-hidden rounded-sm border-b-2 border-r-2 border-slate-300 bg-transparent dark:border-bgbluelighter"
     >
       <div
         class="relative z-10 h-5 overflow-hidden bg-blue-700"
@@ -29,6 +29,8 @@ const timer = setInterval(() => {
         ></div>
       </div>
     </div>
-    <div class="justify-center pl-2">{{ percent }}%</div>
+    <div class="justify-center pl-2 text-blue-900 dark:text-white">
+      {{ percent }}%
+    </div>
   </div>
 </template>
