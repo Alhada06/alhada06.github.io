@@ -62,14 +62,14 @@ const { stop: stop5 } = useIntersectionObserver(
     <article class="mx-2 mb-[500px] scroll-pt-16 md:mx-3">
       <h1
         ref="head"
-        class="ml-4 py-4 pl-8 text-4xl text-blue-800 dark:text-white"
+        class="m-4 mr-5 rounded-bl-3xl rounded-tr-3xl border-slate-400 bg-slate-300/30 py-4 pl-8 text-4xl text-blue-800 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:text-white dark:shadow-white/25"
       >
         Diogo Alhada, Im a Developer.
       </h1>
       <div></div>
       <section
         ref="section1"
-        class="m-4 mb-10 rounded-lg p-4 backdrop-blur-sm md:p-8 lg:m-4"
+        class="m-4 mb-10 ml-4 mr-5 rounded-br-3xl rounded-tl-3xl border-slate-400 bg-slate-300/30 p-4 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:shadow-white/25 md:p-8 lg:m-4"
       >
         <h2
           id="0"
@@ -81,7 +81,7 @@ const { stop: stop5 } = useIntersectionObserver(
       </section>
       <section
         ref="section2"
-        class="m-4 mb-10 rounded-lg p-4 backdrop-blur-sm md:p-8"
+        class="m-4 mb-10 ml-4 mr-5 rounded-bl-3xl rounded-tr-3xl border-slate-400 bg-slate-300/30 p-4 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:shadow-white/25 md:p-8 lg:m-4"
       >
         <h2
           id="1"
@@ -94,7 +94,7 @@ const { stop: stop5 } = useIntersectionObserver(
       <section
         id="2"
         ref="section3"
-        class="m-4 mb-10 rounded-lg p-4 backdrop-blur-sm md:p-8"
+        class="m-4 mb-10 ml-4 mr-5 rounded-br-3xl rounded-tl-3xl border-slate-400 bg-slate-300/30 p-4 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:shadow-white/25 md:p-8 lg:m-4"
       >
         <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
           {{ $t("skills") }}
@@ -105,7 +105,7 @@ const { stop: stop5 } = useIntersectionObserver(
       <section
         id="3"
         ref="section4"
-        class="m-4 mb-10 rounded-lg p-4 backdrop-blur-sm md:p-8"
+        class="m-4 mb-10 ml-4 mr-5 rounded-bl-3xl rounded-tr-3xl border-slate-400 bg-slate-300/30 p-4 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:shadow-white/25 md:p-8 lg:m-4"
       >
         <h2 class="py-4 pt-10 text-2xl text-blue-900 dark:text-slate-200">
           {{ $t("certsSection") }}
@@ -116,7 +116,7 @@ const { stop: stop5 } = useIntersectionObserver(
       <section
         id="4"
         ref="section5"
-        class="m-4 mb-10 rounded-lg p-4 backdrop-blur-sm md:p-8"
+        class="m-4 mb-10 ml-4 mr-5 rounded-br-3xl rounded-tl-3xl border-slate-400 bg-slate-300/30 p-4 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:shadow-white/25 md:p-8 lg:m-4"
       >
         <div class="flex justify-center"><TheContactForm /></div>
       </section>

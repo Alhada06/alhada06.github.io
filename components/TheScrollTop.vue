@@ -50,7 +50,7 @@ watch(scrollPrecent, (newVal, _oldVal) => {
   </div> -->
   <div
     v-if="scrollPrecent >= 25"
-    class="fixed bottom-5 right-3 z-40 text-blue-800 dark:text-white md:right-8"
+    class="fixed bottom-5 right-1 z-40 text-blue-800 dark:text-white md:right-8"
     @click="scrollT"
   >
     <button
