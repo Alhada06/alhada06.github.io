@@ -64,7 +64,7 @@ const { stop: stop5 } = useIntersectionObserver(
         ref="head"
         class="m-4 mr-5 rounded-bl-3xl rounded-tr-3xl border-slate-400 bg-slate-300/30 py-4 pl-8 text-3xl text-blue-800 shadow-inner shadow-blue-900/25 backdrop-blur-sm dark:border-bgbluelighter dark:bg-bgbluelighter/40 dark:text-white dark:shadow-white/25 md:text-4xl lg:m-4"
       >
-        Diogo Alhada, Im a Developer.
+        Diogo Alhada, I'm a Developer.
       </h1>
       <div></div>
       <section
