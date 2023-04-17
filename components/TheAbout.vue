@@ -13,6 +13,7 @@ const { result: aboutData } = useQuery(
     prefetch: false,
   }
 );
+const about = computed(() => aboutData.value?.about?.description);
 const { result: academicsData } = useQuery(
   academicsQuery,
   () => {
@@ -22,6 +23,9 @@ const { result: academicsData } = useQuery(
     prefetch: false,
   }
 );
+const academics = computed(
+  () => academicsData.value?.academicsCollection?.items
+);
 </script>
 
 <template>
@@ -29,7 +33,7 @@ const { result: academicsData } = useQuery(
     <div
       class="m-1 whitespace-pre-wrap p-1 text-justify text-sm tracking-tighter text-blue-900/95 dark:text-slate-300 md:text-base md:tracking-tight"
     >
-      {{ aboutData?.about?.description }}
+      {{ about }}
     </div>
     <div class="m-1 flex w-full flex-col p-1">
       <div class="text-left text-lg text-blue-900 dark:text-white">
@@ -37,7 +41,7 @@ const { result: academicsData } = useQuery(
       </div>
       <div class="m-1 p-1 pt-4">
         <div
-          v-for="(degree, index) in academicsData?.academicsCollection?.items"
+          v-for="(degree, index) in academics"
           :key="index"
           class="mb-2 flex w-full flex-col pb-3"
           :class="{
