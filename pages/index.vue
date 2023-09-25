@@ -17,7 +17,7 @@ const { stop } = useIntersectionObserver(
   ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section1 = isIntersecting;
   },
-  { rootMargin: "0px 0px -80% 0px" }
+  { rootMargin: "0px 0px -80% 0px" },
 );
 const section2 = ref(null);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -26,7 +26,7 @@ const { stop: stop2 } = useIntersectionObserver(
   ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section2 = isIntersecting;
   },
-  { rootMargin: "0px 0px -80% 0px" }
+  { rootMargin: "0px 0px -80% 0px" },
 );
 const section3 = ref(null);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -35,7 +35,7 @@ const { stop: stop3 } = useIntersectionObserver(
   ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section3 = isIntersecting;
   },
-  { rootMargin: "0px 0px -80% 0px" }
+  { rootMargin: "0px 0px -80% 0px" },
 );
 const section4 = ref(null);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -44,7 +44,7 @@ const { stop: stop4 } = useIntersectionObserver(
   ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section4 = isIntersecting;
   },
-  { rootMargin: "0px 0px -80% 0px" }
+  { rootMargin: "0px 0px -80% 0px" },
 );
 const section5 = ref(null);
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -53,7 +53,7 @@ const { stop: stop5 } = useIntersectionObserver(
   ([{ isIntersecting }], _observerElement) => {
     isIntersectingSection.value.Section5 = isIntersecting;
   },
-  { rootMargin: "0px 0px -80% 0px" }
+  { rootMargin: "0px 0px -80% 0px" },
 );
 </script>
 
@@ -120,6 +120,7 @@ const { stop: stop5 } = useIntersectionObserver(
       >
         <div class="flex justify-center"><TheContactForm /></div>
       </section>
+      <!-- <TheTextShuffle text="this a shuffle test" /> -->
     </article>
   </div>
 </template>
