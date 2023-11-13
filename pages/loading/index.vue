@@ -18,7 +18,7 @@ const timer = setInterval(() => {
     setTimeout(() => {
       clearInterval(timer);
       return navigateTo("/");
-    }, 1000);
+    }, 300);
   }
 }, 3);
 </script>
