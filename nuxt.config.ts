@@ -28,7 +28,22 @@ export default defineNuxtConfig({
     "@nuxtjs/apollo",
     "@nuxtjs/google-fonts",
     "@twicpics/components/nuxt3",
+    "@nuxt/content",
   ],
+  content: {
+    markdown: {
+      // Object syntax can be used to override default options
+      remarkPlugins: {
+        // Override remark-emoji options
+        "remark-emoji": {
+          emoticon: true,
+        },
+        // Disable remark-gfm
+        "remark-gfm": false,
+        // Add remark-oembed
+      },
+    },
+  },
   googleFonts: {
     families: {
       "Roboto+Mono": true,
