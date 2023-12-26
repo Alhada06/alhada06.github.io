@@ -10,7 +10,7 @@ const { result: projectsData } = useQuery(
   },
   {
     prefetch: false,
-  }
+  },
 );
 
 const show = ref(false);

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { loadFull } from "tsparticles";
-const particlesInit = async (engine: Engine) => {
-  await loadFull(engine);
-};
+// import { loadFull } from "tsparticles";
+// const particlesInit = async (engine: Engine) => {
+//   await loadFull(engine);
+// };
 const options = {
   background: {
     color: {
@@ -175,18 +175,8 @@ const optionsLight = {
   <div>
     <div class="relative -z-10 bg-bgblue">
       <ClientOnly>
-        <Particles
-          v-if="isDark"
-          id="tsparticles"
-          :options="options"
-          :particles-init="particlesInit"
-        />
-        <Particles
-          v-else
-          id="tsparticles"
-          :options="optionsLight"
-          :particles-init="particlesInit"
-        />
+        <vue-particles v-if="isDark" id="tsparticles" :options="options" />
+        <vue-particles v-else id="tsparticles" :options="optionsLight" />
       </ClientOnly>
     </div>
     <slot />

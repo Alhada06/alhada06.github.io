@@ -11,7 +11,7 @@ const { result: certificatesData } = useQuery(
   },
   {
     prefetch: false,
-  }
+  },
 );
 
 const certData = ref({

@@ -10,7 +10,7 @@ const { stop } = useIntersectionObserver(
   ([{ isIntersecting }], _observerElement) => {
     targetIsVisible.value = isIntersecting;
     // console.log(observerElement)
-  }
+  },
 );
 // const particlesContainer = ref(null);
 const particlesInit = async (engine: any) => {
@@ -195,18 +195,8 @@ const optionsLight = {
   <div>
     <div class="relative -z-10 h-full w-full bg-bgblue">
       <ClientOnly>
-        <Particles
-          v-if="isDark"
-          id="tsparticles"
-          :options="options"
-          :particles-init="particlesInit"
-        />
-        <Particles
-          v-else
-          id="tsparticles"
-          :options="optionsLight"
-          :particles-init="particlesInit"
-        />
+        <vue-particles v-if="isDark" id="tsparticles" :options="options" />
+        <vue-particles v-else id="tsparticles" :options="optionsLight" />
       </ClientOnly>
     </div>
     <div ref="defRoot">

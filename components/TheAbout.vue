@@ -11,7 +11,7 @@ const { result: aboutData } = useQuery(
   },
   {
     prefetch: false,
-  }
+  },
 );
 const about = computed(() => aboutData.value?.about?.description);
 const { result: academicsData } = useQuery(
@@ -21,10 +21,10 @@ const { result: academicsData } = useQuery(
   },
   {
     prefetch: false,
-  }
+  },
 );
 const academics = computed(
-  () => academicsData.value?.academicsCollection?.items
+  () => academicsData.value?.academicsCollection?.items,
 );
 </script>
 
