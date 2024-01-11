@@ -13,12 +13,12 @@ const percent = computed<string>(() => percentage.value.toFixed());
 
 const timer = setInterval(() => {
   if (percentage.value < 100) {
-    percentage.value += 0.1;
+    percentage.value += 0.5;
   } else {
     setTimeout(() => {
       clearInterval(timer);
-      return navigateTo("/");
-    }, 100);
+      // return navigateTo("/");
+    }, 1);
   }
 }, 3);
 </script>
