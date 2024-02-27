@@ -1,6 +1,6 @@
 <script setup>
 const { locale } = useI18n();
-useGqlToken(process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN);
+
 const { data: aboutData } = await useAsyncGql("aboutEntryQuery", {
   locale,
 });

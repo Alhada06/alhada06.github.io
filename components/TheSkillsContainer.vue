@@ -1,6 +1,5 @@
 <script setup>
 const { data: skillsData } = await useAsyncGql("skillCollectionQuery");
-useGqlToken(process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN);
 </script>
 
 <template>
