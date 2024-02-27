@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const nuxtApp = useNuxtApp();
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+useGqlToken(process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN);
 const loading = ref(false);
 
 nuxtApp.hook("page:finish", () => {
