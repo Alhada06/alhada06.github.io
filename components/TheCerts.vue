@@ -2,7 +2,7 @@
 const show = ref(false);
 
 const { locale } = useI18n();
-
+useGqlToken(process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN);
 const { data: certificatesData } = await useAsyncGql(
   "certificateCollectionQuery",
   {
