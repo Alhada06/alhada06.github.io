@@ -1,5 +1,7 @@
+<!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <!-- eslint-disable vue/no-v-html -->
 <script setup>
+import { marked } from "marked";
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -71,10 +73,10 @@ const props = defineProps({
                   /></NuxtLink>
                 </div>
                 <HeadlessDialogDescription
+                  as="div"
                   class="m-1 hyphens-auto whitespace-pre-wrap p-2 dark:prose-invert prose prose-xl prose-blue dark:prose-blue text-justify text-xs tracking-tighter text-blue-900 dark:text-white/80 md:text-sm"
+                  v-html="marked.parse(props.projectData?.description)"
                 >
-                  <!-- {{ props.projectData?.description }} -->
-                  <MDC :value="props.projectData?.description" tag="p" />
                 </HeadlessDialogDescription>
               </div>
             </div>

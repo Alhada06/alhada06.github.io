@@ -27,23 +27,23 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "@nuxtjs/google-fonts",
     "@twicpics/components/nuxt3",
-    "@nuxt/content",
+    // "@nuxt/content",
     "nuxt-graphql-client",
   ],
-  content: {
-    markdown: {
-      // Object syntax can be used to override default options
-      remarkPlugins: {
-        // Override remark-emoji options
-        "remark-emoji": {
-          emoticon: true,
-        },
-        // Disable remark-gfm
-        "remark-gfm": false,
-        // Add remark-oembed
-      },
-    },
-  },
+  // content: {
+  //   markdown: {
+  //     // Object syntax can be used to override default options
+  //     remarkPlugins: {
+  //       // Override remark-emoji options
+  //       "remark-emoji": {
+  //         emoticon: true,
+  //       },
+  //       // Disable remark-gfm
+  //       "remark-gfm": false,
+  //       // Add remark-oembed
+  //     },
+  //   },
+  // },
   googleFonts: {
     families: {
       "Roboto+Mono": true,
