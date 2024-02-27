@@ -1,28 +1,14 @@
 <script setup>
-import aboutQuery from "@/graphql/queries/about.query.gql";
-import academicsQuery from "@/graphql/queries/academics.query.gql";
-
 const { locale } = useI18n();
 
-const { result: aboutData } = useQuery(
-  aboutQuery,
-  () => {
-    return { locale: locale.value };
-  },
-  {
-    prefetch: false,
-  },
-);
+const { data: aboutData } = await useAsyncGql("aboutEntryQuery", {
+  locale,
+});
 const about = computed(() => aboutData.value?.about?.description);
-const { result: academicsData } = useQuery(
-  academicsQuery,
-  () => {
-    return { locale: locale.value };
-  },
-  {
-    prefetch: false,
-  },
-);
+
+const { data: academicsData } = await useAsyncGql("academicsCollectionQuery", {
+  locale,
+});
 const academics = computed(
   () => academicsData.value?.academicsCollection?.items,
 );

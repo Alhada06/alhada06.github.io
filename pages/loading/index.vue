@@ -10,17 +10,18 @@ definePageMeta({
 
 const percentage = ref<number>(0);
 const percent = computed<string>(() => percentage.value.toFixed());
-
-const timer = setInterval(() => {
-  if (percentage.value < 100) {
-    percentage.value += 0.5;
-  } else {
-    setTimeout(() => {
-      clearInterval(timer);
-      return navigateTo("/");
-    }, 1);
-  }
-}, 3);
+onNuxtReady(() => {
+  const timer = setInterval(() => {
+    if (percentage.value < 100) {
+      percentage.value += 0.5;
+    } else {
+      setTimeout(() => {
+        clearInterval(timer);
+        return navigateTo("/");
+      }, 1);
+    }
+  }, 3);
+});
 </script>
 
 <template>

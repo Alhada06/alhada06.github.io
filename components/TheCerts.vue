@@ -1,16 +1,12 @@
 <script setup>
-import certificatesQuery from "@/graphql/queries/certificates.query.gql";
 const show = ref(false);
 
 const { locale } = useI18n();
 
-const { result: certificatesData } = useQuery(
-  certificatesQuery,
-  () => {
-    return { locale: locale.value };
-  },
+const { data: certificatesData } = await useAsyncGql(
+  "certificateCollectionQuery",
   {
-    prefetch: false,
+    locale,
   },
 );
 

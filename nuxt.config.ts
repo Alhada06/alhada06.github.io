@@ -25,10 +25,10 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxtjs/i18n",
     "nuxt-headlessui",
-    "@nuxtjs/apollo",
     "@nuxtjs/google-fonts",
     "@twicpics/components/nuxt3",
     "@nuxt/content",
+    "nuxt-graphql-client",
   ],
   content: {
     markdown: {
@@ -85,27 +85,31 @@ export default defineNuxtConfig({
   build: {
     transpile: ["@headlessui/vue"],
   },
-  apollo: {
+  "graphql-client": {
     clients: {
       default: {
-        httpEndpoint:
+        host:
           "https://graphql.contentful.com/content/v1/spaces/" +
           process.env.NUXT_CONTENTFUL_SPACE,
-        httpLinkOptions: {
-          headers: {
-            authorization:
-              "Bearer " + process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
-            "Content-Type": "application/json",
-          },
-          credentials: "same-origin",
+
+        token: {
+          type: "Bearer",
+          name: "Authorization",
+          value: process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
         },
-        tokenName: "apollo-token",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        codegenHeaders: {
+          "Content-Type": "application/json",
+        },
       },
     },
   },
   twicpics: {
     domain: "https://alhada06-github.twic.pics",
   },
+
   runtimeConfig: {
     NUXT_SENDGRID_API_KEY: process.env.NUXT_SENDGRID_API_KEY,
     public: {

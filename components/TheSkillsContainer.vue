@@ -1,6 +1,5 @@
 <script setup>
-import skillsQuery from "@/graphql/queries/skills.query.gql";
-const { result: skillsData } = useQuery(skillsQuery, null, { prefetch: false });
+const { data: skillsData } = await useAsyncGql("skillCollectionQuery");
 </script>
 
 <template>

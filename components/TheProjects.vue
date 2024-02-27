@@ -1,17 +1,9 @@
 <script setup>
-import projectsQuery from "@/graphql/queries/projects.query.gql";
-
 const { locale } = useI18n();
 
-const { result: projectsData } = useQuery(
-  projectsQuery,
-  () => {
-    return { locale: locale.value };
-  },
-  {
-    prefetch: false,
-  },
-);
+const { data: projectsData } = await useAsyncGql("projectCollectionQuery", {
+  locale,
+});
 
 const show = ref(false);
 

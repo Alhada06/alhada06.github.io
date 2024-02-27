@@ -5,14 +5,15 @@ const props = defineProps({
 
 const percentage = ref<number>(0);
 const percent = computed<string>(() => percentage.value.toFixed());
-
-const timer = setInterval(() => {
-  if (percentage.value < props.limit) {
-    percentage.value += 0.1;
-  } else {
-    clearInterval(timer);
-  }
-}, 10);
+onNuxtReady(() => {
+  const timer = setInterval(() => {
+    if (percentage.value < props.limit) {
+      percentage.value += 0.1;
+    } else {
+      clearInterval(timer);
+    }
+  }, 10);
+});
 </script>
 
 <template>
