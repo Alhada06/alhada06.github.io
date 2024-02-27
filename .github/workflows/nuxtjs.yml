@@ -27,6 +27,8 @@ jobs:
           NUXT_SENDGRID_API_KEY: ${{ secrets.NUXT_SENDGRID_API_KEY }}
       - uses: JamesIves/github-pages-deploy-action@v4.4.0
         with:
+          NUXT_CONTENTFUL_SPACE: ${{ secrets.NUXT_CONTENTFUL_SPACE }}
+          NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN: ${{ secrets.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: ".output/public"
