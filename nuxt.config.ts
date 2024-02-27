@@ -91,6 +91,7 @@ export default defineNuxtConfig({
         host:
           "https://graphql.contentful.com/content/v1/spaces/" +
           process.env.NUXT_CONTENTFUL_SPACE,
+        retainToken: true,
 
         token: {
           type: "Bearer",
