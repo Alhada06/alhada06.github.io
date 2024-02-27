@@ -90,12 +90,12 @@ export default defineNuxtConfig({
       default: {
         host:
           "https://graphql.contentful.com/content/v1/spaces/" +
-          import.meta.env.NUXT_CONTENTFUL_SPACE,
+          process.env.NUXT_CONTENTFUL_SPACE,
 
         token: {
           type: "Bearer",
           name: "Authorization",
-          value: import.meta.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
+          value: process.env.NUXT_CONTENTFUL_PUBLIC_ACCESS_TOKEN,
         },
         headers: {
           "Content-Type": "application/json",
