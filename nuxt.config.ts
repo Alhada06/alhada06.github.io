@@ -19,7 +19,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: ["~/plugins/vue3-particles.ts"],
+
   modules: [
     "@vueuse/nuxt",
     "nuxt-icon",

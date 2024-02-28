@@ -3,7 +3,12 @@
 // const particlesInit = async (engine: Engine) => {
 //   await loadFull(engine);
 // };
-const options = {
+import type { ISourceOptions, Container } from "@tsparticles/engine";
+const particlesLoaded = (container?: Container) => {
+  console.log(container);
+};
+
+const options: ISourceOptions = {
   background: {
     color: {
       value: "#041731",
@@ -25,7 +30,7 @@ const options = {
         enable: true,
         mode: "grab",
       },
-      resize: true,
+      // resize: true,
     },
     modes: {
       bubble: {
@@ -61,7 +66,7 @@ const options = {
     move: {
       direction: "none",
       enable: true,
-      outMode: "out",
+      outModes: "out",
       random: false,
       speed: 2,
       straight: false,
@@ -69,7 +74,7 @@ const options = {
     number: {
       density: {
         enable: true,
-        value_area: 1000,
+        // value_area: 1000,
       },
       value: 100,
     },
@@ -80,7 +85,7 @@ const options = {
       type: "circle",
     },
     size: {
-      random: true,
+      // random: true,
       value: 3,
     },
   },
@@ -175,8 +180,18 @@ const optionsLight = {
   <div>
     <div class="relative -z-10 bg-bgblue">
       <ClientOnly>
-        <vue-particles v-if="isDark" id="tsparticles" :options="options" />
-        <vue-particles v-else id="tsparticles" :options="optionsLight" />
+        <vue-particles
+          v-if="isDark"
+          id="tsparticles"
+          @particles-loaded="particlesLoaded"
+          :options="options"
+        />
+        <vue-particles
+          v-else
+          id="tsparticles"
+          @particles-loaded="particlesLoaded"
+          :options="optionsLight"
+        />
       </ClientOnly>
     </div>
     <slot />

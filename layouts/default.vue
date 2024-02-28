@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { loadFull } from "tsparticles";
-
+// import { loadFull } from "tsparticles";
+import type { ISourceOptions, Container } from "@tsparticles/engine";
 const nav = ref(null);
 const targetIsVisible = ref(false);
 
@@ -13,9 +13,9 @@ const { stop } = useIntersectionObserver(
   },
 );
 // const particlesContainer = ref(null);
-const particlesInit = async (engine: any) => {
-  await loadFull(engine);
-};
+// const particlesInit = async (engine: any) => {
+//   await loadFull(engine);
+// };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tsparticles = ref(null);
@@ -23,8 +23,10 @@ const tsparticles = ref(null);
 //   console.log(tsparticles.value, particlesContainer.value);
 //   particlesContainer.value.loadTheme("light");
 // };
-
-const options = {
+const particlesLoaded = (container?: Container) => {
+  console.log(container);
+};
+const options: ISourceOptions = {
   background: {
     color: {
       value: "#041731",
@@ -46,7 +48,7 @@ const options = {
         enable: true,
         mode: "grab",
       },
-      resize: true,
+      // resize: true,
     },
     modes: {
       bubble: {
@@ -82,7 +84,7 @@ const options = {
     move: {
       direction: "none",
       enable: true,
-      outMode: "out",
+      outModes: "out",
       random: false,
       speed: 2,
       straight: false,
@@ -90,7 +92,7 @@ const options = {
     number: {
       density: {
         enable: true,
-        value_area: 1000,
+        // value_area: 1000,
       },
       value: 100,
     },
@@ -101,13 +103,13 @@ const options = {
       type: "circle",
     },
     size: {
-      random: true,
+      // random: true,
       value: 3,
     },
   },
   detectRetina: true,
 };
-const optionsLight = {
+const optionsLight: ISourceOptions = {
   background: {
     color: {
       value: "#f1f5f9", // slate-100
@@ -129,7 +131,7 @@ const optionsLight = {
         enable: true,
         mode: "grab",
       },
-      resize: true,
+      // resize: true,
     },
     modes: {
       bubble: {
@@ -165,7 +167,7 @@ const optionsLight = {
     move: {
       direction: "none",
       enable: true,
-      outMode: "out",
+      outModes: "out",
       random: false,
       speed: 2,
       straight: false,
@@ -173,7 +175,7 @@ const optionsLight = {
     number: {
       density: {
         enable: true,
-        value_area: 1000,
+        // value_area: 1000,
       },
       value: 100,
     },
@@ -184,7 +186,7 @@ const optionsLight = {
       type: "circle",
     },
     size: {
-      random: true,
+      // random: true,
       value: 3,
     },
   },
@@ -195,8 +197,18 @@ const optionsLight = {
   <div>
     <div class="relative -z-10 h-full w-full bg-bgblue">
       <ClientOnly>
-        <vue-particles v-if="isDark" id="tsparticles" :options="options" />
-        <vue-particles v-else id="tsparticles" :options="optionsLight" />
+        <vue-particles
+          v-if="isDark"
+          id="tsparticles"
+          @particles-loaded="particlesLoaded"
+          :options="options"
+        />
+        <vue-particles
+          v-else
+          id="tsparticles"
+          @particles-loaded="particlesLoaded"
+          :options="optionsLight"
+        />
       </ClientOnly>
     </div>
     <div ref="defRoot">
