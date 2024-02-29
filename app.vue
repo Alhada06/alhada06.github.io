@@ -28,7 +28,7 @@ html.dark {
 
 .page-enter-active,
 .page-leave-active {
-  transition: all 0.4s;
+  transition: all 0.4s ease;
 }
 
 .page-enter-from,
