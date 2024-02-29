@@ -1,1 +1,0 @@
-import{ao as o}from"./entry.BqAYfT-z.js";async function s(){o("ease-in-quad",a=>a**2),o("ease-out-quad",a=>1-(1-a)**2),o("ease-in-out-quad",a=>a<.5?2*a**2:1-(-2*a+2)**2/2),await Promise.resolve()}export{s as loadEasingQuadPlugin};
