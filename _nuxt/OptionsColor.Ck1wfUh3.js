@@ -1,1 +1,0 @@
-import{as as i,al as o}from"./entry.BEzjY2Vj.js";class l{constructor(){this.value=""}static create(e,r){const s=new l;return s.load(e),r!==void 0&&(i(r)||o(r)?s.load({value:r}):s.load(r)),s}load(e){(e==null?void 0:e.value)!==void 0&&(this.value=e.value)}}export{l as O};
