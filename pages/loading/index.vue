@@ -1,7 +1,7 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: "backgound",
-});
+// definePageMeta({
+//   layout: "defa",
+// });
 // setTimeout(() => {
 //     return navigateTo("/");
 // }, 2000);
