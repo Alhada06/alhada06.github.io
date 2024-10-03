@@ -55,6 +55,7 @@ const props = defineProps({
               class="rounded-md drop-shadow-xl dark:shadow-white"
               :src="props.certData.url"
               ratio="4/3"
+              mode="contain"
             />
           </div>
           <HeadlessDialogDescription
